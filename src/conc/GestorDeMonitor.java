@@ -25,12 +25,12 @@ public class GestorDeMonitor {
      * Constructor:
      * Incializo Mutex, Rdp, Colas(le paso la cantidad de transiciones) y Politicas
      */
-    public GestorDeMonitor(String[] direccion) {
+    public GestorDeMonitor(String[] direccion,String dirpol) {
 
         mut = new Mutex();
         red = new RdP(direccion);
         col = new Colas(red.getCantT());
-        pol = new Politicas();
+        pol = new Politicas(dirpol);
 
     }
 

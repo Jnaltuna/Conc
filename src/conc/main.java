@@ -17,15 +17,16 @@ public class main {
         String dir2 = "C:\\Users\\Altuna\\Desktop\\marca.txt";
         String dir3 = "C:\\Users\\Altuna\\Desktop\\inhibicion.txt";
         String dir4 = "C:\\Users\\Altuna\\Desktop\\hilos.txt";
+        String dir5 = "C:\\Users\\Altuna\\Desktop\\politica.txt";
 
         String[] direccion = new String[] {dir1,dir2,dir3};
 
-        GestorDeMonitor mot = new GestorDeMonitor(direccion);
+        GestorDeMonitor mot = new GestorDeMonitor(direccion,dir5);
 
         ThreadManager manager = new ThreadManager(mot,dir4);
 
         manager.crearHilos();
-        manager.iniciarHilos();
+        //manager.iniciarHilos();
 
         try {
             sleep(10000);
@@ -33,7 +34,7 @@ public class main {
             e.printStackTrace();
         }
 
-        manager.finalizarHilos();
+        //manager.finalizarHilos();
         //manager.terminarExecutor();
 
        /* ThreadPoolExecutor executor = (ThreadPoolExecutor)Executors.newCachedThreadPool();
