@@ -53,7 +53,7 @@ public class RdP {
 
         this.vectSens = calcsens();
 
-        redcontiempo = new timerdp("C:\\Users\\Altuna\\Desktop\\time.txt");
+        //redcontiempo = new timerdp("C:\\Users\\Altuna\\Desktop\\time.txt",vectSens); //TODO acomodar para unittests
 
     }
 
@@ -113,7 +113,7 @@ public class RdP {
     /*
      * No recibe ningun parametro
      * @return ArrayList con un 1 en la posicion cuya transicion se puede disparar
-     *
+     *  TODO borrar si no lo estoy usando
      * */
     public ArrayList<Integer> sensibilizadas() {
 
@@ -130,15 +130,15 @@ public class RdP {
 
             ArrayList<Integer> tmp = new ArrayList<>();
 
-            for(int k=0;k<cantp;k++) { // TODO hacer una funcion que calcule esto
+            for(int k=0;k<cantp;k++) {
 
                     tmp.add(marca.get(k) + rdp.get(j).get(k));
 
                     if (tmp.get(k) < 0) {
                         sens.set(j, 0);
                     }
-                    if(inhibicion.get(j).get(k) == 1 && marca.get(k) > 0){//TODO revisar, inhibicion
-                        sens.set(j,0);                                    //TODO
+                    if(inhibicion.get(j).get(k) == 1 && marca.get(k) > 0){
+                        sens.set(j,0);
                     }
             }
         }

@@ -10,8 +10,9 @@ public class timerdp {
     private ArrayList<ArrayList<Integer>> tiempo;
     private ArrayList<Long> timestamps;
     private ArrayList<Boolean> esperando;
+    private ArrayList<Integer> oldsens;
 
-    public timerdp(String dir){
+    public timerdp(String dir,ArrayList<Integer> vectsens){
 
         tiempo = new ArrayList<>();
         timestamps = new ArrayList<>();
@@ -19,11 +20,18 @@ public class timerdp {
 
         tiempo = cargartiempo(dir);
 
-        for(int i =0;i<tiempo.size();i++){
-            timestamps.add(System.currentTimeMillis());
-            esperando.add(false); //TODO inicializar en true o false???
+        for(int i =0;i<tiempo.size();i++){ //TODO agrego timestamp si esta sens, null de lo contrario
+
+            if(vectsens.get(i) == 1){
+                timestamps.add(System.currentTimeMillis());
+            }
+            else{
+                timestamps.add(0L);
+            }
+            esperando.add(false);
         }
 
+        oldsens = vectsens;
     }
 
     private ArrayList<ArrayList<Integer>> cargartiempo(String dir){ //TODO cambiar ruta
@@ -78,8 +86,26 @@ public class timerdp {
             return false;
     }
 
-    public void setNuevoTimeStamp(Integer disp){
-        timestamps.set(disp,System.currentTimeMillis());
+    public void setNuevoTimeStamp(Integer disp,boolean add){ //TODO si add es true, agrego nuevo TS. Si es false pongo 0
+
+        if(add) {
+            timestamps.set(disp, System.currentTimeMillis());
+        }
+        else{
+            timestamps.set(disp, 0L);
+        }
+
+    }
+
+    public void calctimestamps(ArrayList<Integer> actsens){ //TODO revisar, llamar desde RDP cuando calculo las nuevas sens
+        for(int i = 0;i<actsens.size();i++){
+            if(actsens.get(i) == 1 && oldsens.get(i) == 0){
+                setNuevoTimeStamp(i,true);
+            }
+            else if(actsens.get(i) == 0 && oldsens.get(i) == 1){
+                setNuevoTimeStamp(i,false);
+            }
+        }
     }
 
     public Boolean antesDeLaVentana(Integer disp){
@@ -103,10 +129,10 @@ public class timerdp {
         return esperando.get(disp);
     }
 
-    public void resetEsperando(){ //TODO reset de todos o solo el actual???
-        for(int i = 0 ; i<esperando.size(); i++){
-            esperando.set(i,false);
-        }
+    public void resetEsperando(Integer disp){ //TODO reset de todos o solo el actual???
+
+            esperando.set(disp,false);
+
     }
 
     public ArrayList<ArrayList<Integer>> getred(){

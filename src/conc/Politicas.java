@@ -8,18 +8,20 @@ import java.util.ArrayList;
 /*
  * Clase Politicas
  * Implementa la politica tomada para la ejecucion del programa
- * TODO
-
+ * TODO Consultar
  * */
 
 public class Politicas {
 
-    /* TODO revisar*/
     private ArrayList<ArrayList<Integer>> grupos;
     private ArrayList<Integer> prioridadgrupos;
     private ArrayList<ArrayList<Integer>> subprioridadgrupo;
     private Integer grupoactual;
 
+    /*
+    Constructor de la clase.
+    @param dirpol direccion en la cual encuentro el txt con la politica adoptada
+     */
     public Politicas(String dirpol) {
 
         grupos = new ArrayList<>();
@@ -36,6 +38,7 @@ public class Politicas {
     }
 
     //Recibo el arreglo con los elementos que puedo disparar. Devuelvo el primero
+    //TODO Borrar, implementar que la rdp use Cualv2
     public Integer Cual(ArrayList<Integer> arr) {
 
         for(int i=0;i<arr.size();i++) {
@@ -47,26 +50,46 @@ public class Politicas {
         return 0; //TODO ????
     }
 
+    /*
+    @param arr Arreglo con los elementos que puedo disparar
+    @return Entero correspondiente a la transicion que decido disparar
+    Utilizo los grupos que obtengo del txt y en cada llamado de la funcion ingreso a un grupo distinto
+    Dentro del grupo analizo la prioridad de todas las transiciones. Busco la o las transiciones disponibles
+    con la maxima prioridad y disparo una de ellas de forma aleatoria.
+     */
+
     public Integer Cualv2(ArrayList<Integer> arr){
 
         ArrayList<Integer> puedodisp = new ArrayList<>();
-        boolean valor = true;
+        boolean valorgrupo = true;
+        //boolean valorprioridad = true;
 
-        while(valor){
+        while(valorgrupo){
 
+            boolean valorprioridad = true;
             int max = getMaxpriority(subprioridadgrupo.get(grupoactual));
 
             puedodisp.clear();
 
-            for(int i = 0 ; i<grupos.get(grupoactual).size();i++){
+            while(valorprioridad) {
+                for (int i = 0; i < grupos.get(grupoactual).size(); i++) {
 
-                if(subprioridadgrupo.get(grupoactual).get(i) == max){
+                    if (subprioridadgrupo.get(grupoactual).get(i) == max) {
 
-                    int elem = grupos.get(grupoactual).get(i);
+                        int elem = grupos.get(grupoactual).get(i);
 
-                    if (arr.get(elem) == 1){
-                        puedodisp.add(elem);
+                        if (arr.get(elem) == 1) {
+                            puedodisp.add(elem);
+                        }
                     }
+
+                }
+
+                if(puedodisp.isEmpty() && max!=0){
+                    max--;
+                }
+                else{
+                    valorprioridad=false;
                 }
 
             }
@@ -74,7 +97,7 @@ public class Politicas {
             grupoactual++;
 
             if(!puedodisp.isEmpty()){
-                valor = false;
+                valorgrupo = false;
             }
         }
 
@@ -84,6 +107,10 @@ public class Politicas {
 
     }
 
+    /*
+    @param prioridad Lista con prioridades del grupo actual.
+    @return valor maximo de prioridad del grupo.
+     */
     public Integer getMaxpriority(ArrayList<Integer> prioridad){
 
         int max = 0;
@@ -97,6 +124,13 @@ public class Politicas {
         return max;
     }
 
+    /*
+    @param dir Direccion en la cual encuentro el archivo con la politica.
+    Abro el archivo, tomando los valores separados por un tab ('\t').
+    En cada linea tengo tres elementos distintos. Grupo, prioridad de grupo y subprioridad de grupo.
+    Los elementos son separados por el caracter ':', el cual uso para cambiar el arreglo en el cual almaceno los valores.
+    TODO ver que hacer con prioridad de grupo.
+     */
     private void cargarpoliticas(String dir){
 
         try (BufferedReader br = new BufferedReader(new FileReader(dir))) {
@@ -152,14 +186,12 @@ public class Politicas {
 
 }
 
-/* TODO idea para politica
-*
-* Crear un txt en el cual en cada linea tenga un grupo de tareas.
-* Asignar a cada grupo una prioridad. Cada tarea dentro del grupo tiene una subprioridad.
-* Al momento de elegir una transicion, elijo el grupo con mayor prioridad.
-* Si todos los grupos disponibles tienen la misma prioridad, elijo uno al azar.
-* Dentro de cada grupo, disparo la transicion con mayor prioridad.
-*
-* Para los hilos: TODO
-* 1 sola clase, modificar los hilos que se ejecutan con el constructor. Definir en otro txt.
+/* TODO Explicacion politica
+   Tengo un arreglo con distintos grupos.
+   En la primera ejecucion, disparo una transicion del primer grupo. Luego incremento el numero de grupo actual
+   para ir recorriendo todos los grupos.
+   Dentro del disparo de cada grupo tomo en cuenta la prioridad asignada a cada transicion. Busco la prioridad mayor y veo
+   si puedo disparar alguna transicion con esa prioridad. De lo contrario, voy disminuyendo la prioridad hasta que encuentre una
+   disponible.
+   Si no encuentro ninguna en ese grupo, me voy al siguiente.
 * */

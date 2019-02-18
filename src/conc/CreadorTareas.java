@@ -15,12 +15,24 @@ public class CreadorTareas implements Runnable {
     private Boolean continuar = true;
     private Integer tiempoentredisp;
 
+    /*
+    Constructor de la clase.
+    @param mon El monitor a utilizar por el hilo
+    @param disparos Lista con las transiciones que debe disparar el hilo
+    @param time Tiempo entre disparos
+     */
+
     public CreadorTareas(GestorDeMonitor mon,ArrayList<Integer> disparos,Integer time){
 
         this.mon=mon;
         this.disparos=disparos;
         tiempoentredisp = time;
     }
+
+    /*
+    Mientras el atributo del objeto sea true, ejecuta secuencialmente las transiciones que recibio en el constructor.
+    Duerme entre disparos un cierto tiempo.
+     */
 
     public void run(){
 
@@ -40,6 +52,9 @@ public class CreadorTareas implements Runnable {
 
     }
 
+    /*
+    Al llamar a este metodo, modifico el atributo del objeto impidiendo que se disparen nuevas transiciones.
+     */
     public void finalizar(){
         this.continuar=false;
     }

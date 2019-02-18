@@ -17,11 +17,10 @@ public class Tarea2 implements Runnable{
 
     @Override
     public void run() {
-        // TODO Auto-generated method stub
 		/*try {
 			TimeUnit.SECONDS.sleep(10);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}*/
         System.out.println("Tarea 2 es "+ Thread.currentThread().getName());

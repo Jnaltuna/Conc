@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1703f21-f221-4136-9aab-3f306ec40e69" name="Default Changelist" comment="Implementacion de politica y unit tests de la clase">
-      <change afterPath="$PROJECT_DIR$/src/conc/test/PoliticasTest.java" afterDir="false" />
+    <list default="true" id="a1703f21-f221-4136-9aab-3f306ec40e69" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/GestorDeMonitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/GestorDeMonitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TODO" beforeDir="false" afterPath="$PROJECT_DIR$/TODO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/CreadorTareas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/CreadorTareas.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/Politicas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/Politicas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/ThreadManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/ThreadManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/RdP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/RdP.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/Tarea2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/Tarea2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/test/timerdpTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/test/timerdpTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/timerdp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/timerdp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/CreadorTareas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/CreadorTareas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/conc/GestorDeMonitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/GestorDeMonitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/conc/Politicas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/Politicas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conc/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/RdP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/RdP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/Tarea1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/Tarea1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/Tarea2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/Tarea2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/ThreadManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/ThreadManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/test/PoliticasTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/test/PoliticasTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/test/timerdpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/test/timerdpTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/timerdp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/timerdp.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/MonitorConc/target/" />
@@ -31,12 +40,18 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/conc/main.java">
+        <entry file="file://$PROJECT_DIR$/src/conc/Politicas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="19" column="65" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+            <state>
+              <caret line="156" column="60" selection-start-line="156" selection-start-column="57" selection-end-line="156" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4958#4959#0" expanded="true" />
+                <element signature="e#4987#4988#0" expanded="true" />
+                <element signature="e#5041#5042#0" expanded="true" />
+                <element signature="e#5079#5080#0" expanded="true" />
+                <element signature="e#5146#5147#0" expanded="true" />
+                <element signature="e#5186#5187#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -44,18 +59,14 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/conc/GestorDeMonitor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/conc/Tarea1.java">
+        <entry file="file://$PROJECT_DIR$/src/conc/RdP.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+            <state relative-caret-position="461">
+              <caret line="55" column="117" selection-start-line="55" selection-start-column="117" selection-end-line="55" selection-end-column="117" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/conc/CreadorTareas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+            <state relative-caret-position="136">
+              <caret line="17" column="6" lean-forward="true" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,24 +87,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/conc/RdP.java">
+        <entry file="file://$PROJECT_DIR$/src/conc/ThreadManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="93" selection-start-line="93" selection-end-line="93" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#9097#9098#0" expanded="true" />
-                <element signature="e#9123#9124#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/conc/test/PoliticasTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1037">
-              <caret line="85" column="1" lean-forward="true" selection-start-line="85" selection-start-column="1" selection-end-line="85" selection-end-column="1" />
+            <state relative-caret-position="-117">
+              <caret line="24" column="92" selection-start-line="24" selection-start-column="92" selection-end-line="24" selection-end-column="92" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,18 +99,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/conc/Politicas.java">
+        <entry file="file://$PROJECT_DIR$/src/conc/timerdp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="137" column="9" lean-forward="true" selection-start-line="137" selection-start-column="9" selection-end-line="137" selection-end-column="9" />
+            <state relative-caret-position="357">
+              <caret line="24" column="21" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3453#3454#0" expanded="true" />
-                <element signature="e#3482#3483#0" expanded="true" />
-                <element signature="e#3536#3537#0" expanded="true" />
-                <element signature="e#3574#3575#0" expanded="true" />
-                <element signature="e#3641#3642#0" expanded="true" />
-                <element signature="e#3681#3682#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/conc/test/timerdpTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,11 +125,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/conc/test/RdPTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="128" column="76" lean-forward="true" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="76" />
+            <state relative-caret-position="2380">
+              <caret line="150" column="9" selection-start-line="150" selection-start-column="9" selection-end-line="150" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TODO">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -152,7 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/conc/Tarea2.java" />
         <option value="$PROJECT_DIR$/src/conc/Rdp_test.java" />
         <option value="$PROJECT_DIR$/MonitorConc/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/TestRdP.java" />
@@ -165,17 +176,18 @@
         <option value="$PROJECT_DIR$/src/conc/runnables/Entrada3.java" />
         <option value="$PROJECT_DIR$/src/conc/runnables/Entrada1.java" />
         <option value="$PROJECT_DIR$/src/conc/runnables/Entrada2.java" />
+        <option value="$PROJECT_DIR$/src/conc/main.java" />
+        <option value="$PROJECT_DIR$/src/conc/CreadorTareas.java" />
+        <option value="$PROJECT_DIR$/src/conc/test/PoliticasTest.java" />
+        <option value="$PROJECT_DIR$/src/conc/Politicas.java" />
+        <option value="$PROJECT_DIR$/src/conc/Tarea1.java" />
+        <option value="$PROJECT_DIR$/src/conc/Tarea2.java" />
+        <option value="$PROJECT_DIR$/src/conc/ThreadManager.java" />
+        <option value="$PROJECT_DIR$/src/conc/GestorDeMonitor.java" />
         <option value="$PROJECT_DIR$/src/conc/timerdp.java" />
         <option value="$PROJECT_DIR$/src/conc/test/timerdpTest.java" />
         <option value="$PROJECT_DIR$/src/conc/RdP.java" />
-        <option value="$PROJECT_DIR$/src/conc/CreadorTareas.java" />
-        <option value="$PROJECT_DIR$/src/conc/Tarea1.java" />
-        <option value="$PROJECT_DIR$/src/conc/ThreadManager.java" />
         <option value="$PROJECT_DIR$/TODO" />
-        <option value="$PROJECT_DIR$/src/conc/GestorDeMonitor.java" />
-        <option value="$PROJECT_DIR$/src/conc/main.java" />
-        <option value="$PROJECT_DIR$/src/conc/Politicas.java" />
-        <option value="$PROJECT_DIR$/src/conc/test/PoliticasTest.java" />
       </list>
     </option>
   </component>
@@ -190,7 +202,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -221,6 +232,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -228,7 +240,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549574502627" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550504652823" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -236,7 +248,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -259,21 +271,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PoliticasTest">
-    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="conc.main" />
-      <module name="Monitor-Conc" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="conc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PoliticasTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.RdPTest">
+    <configuration name="RdPTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Monitor-Conc" />
       <extension name="coverage">
         <pattern>
@@ -282,13 +281,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="conc.test" />
-      <option name="MAIN_CLASS_NAME" value="conc.test.PoliticasTest" />
+      <option name="MAIN_CLASS_NAME" value="conc.test.RdPTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PoliticasTest.Testcarga" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RdPTest.inhibidortrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Monitor-Conc" />
       <extension name="coverage">
         <pattern>
@@ -297,14 +296,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="conc.test" />
-      <option name="MAIN_CLASS_NAME" value="conc.test.PoliticasTest" />
-      <option name="METHOD_NAME" value="Testcarga" />
+      <option name="MAIN_CLASS_NAME" value="conc.test.RdPTest" />
+      <option name="METHOD_NAME" value="inhibidortrue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PoliticasTest.Testmultiplesdisp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="conc.test in Monitor-Conc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Monitor-Conc" />
       <extension name="coverage">
         <pattern>
@@ -313,14 +312,28 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="conc.test" />
-      <option name="MAIN_CLASS_NAME" value="conc.test.PoliticasTest" />
-      <option name="METHOD_NAME" value="Testmultiplesdisp" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="timerdpTest.cargarvalores" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Monitor-Conc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="conc.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="conc.test" />
+      <option name="MAIN_CLASS_NAME" value="conc.test.timerdpTest" />
+      <option name="METHOD_NAME" value="cargarvalores" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PoliticasTest.Testprioridad" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="timerdpTest.testEsperandoo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Monitor-Conc" />
       <extension name="coverage">
         <pattern>
@@ -329,8 +342,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="conc.test" />
-      <option name="MAIN_CLASS_NAME" value="conc.test.PoliticasTest" />
-      <option name="METHOD_NAME" value="Testprioridad" />
+      <option name="MAIN_CLASS_NAME" value="conc.test.timerdpTest" />
+      <option name="METHOD_NAME" value="testEsperandoo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -338,11 +351,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PoliticasTest" />
-        <item itemvalue="JUnit.PoliticasTest.Testcarga" />
-        <item itemvalue="JUnit.PoliticasTest.Testmultiplesdisp" />
-        <item itemvalue="JUnit.PoliticasTest.Testprioridad" />
-        <item itemvalue="Application.main" />
+        <item itemvalue="JUnit.RdPTest" />
+        <item itemvalue="JUnit.RdPTest.inhibidortrue" />
+        <item itemvalue="JUnit.conc.test in Monitor-Conc" />
+        <item itemvalue="JUnit.timerdpTest.testEsperandoo" />
+        <item itemvalue="JUnit.timerdpTest.cargarvalores" />
       </list>
     </recent_temporary>
   </component>
@@ -357,38 +370,46 @@
       <option name="presentableId" value="Default" />
       <updated>1543507981660</updated>
     </task>
+    <task id="LOCAL-00001" summary="Implementacion de politica y unit tests de la clase">
+      <created>1549574687596</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1549574687596</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="timerdpTest_testEsperandoo - 2019.01.08 at 11h 24m 32s.xml">
+    <history-entry file="timerdpTest_testtimestamp - 2019.02.18 at 11h 10m 19s.xml">
+      <configuration name="timerdpTest.testtimestamp" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="timerdpTest_testtimestamp - 2019.02.18 at 11h 11m 07s.xml">
+      <configuration name="timerdpTest.testtimestamp" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="timerdpTest_testtimestamp - 2019.02.18 at 11h 12m 42s.xml">
+      <configuration name="timerdpTest.testtimestamp" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="timerdpTest_testtimestamp - 2019.02.18 at 11h 12m 57s.xml">
+      <configuration name="timerdpTest.testtimestamp" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="timerdpTest_cargarvalores - 2019.02.18 at 11h 59m 56s.xml">
+      <configuration name="timerdpTest.cargarvalores" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="timerdpTest_testEsperandoo - 2019.02.18 at 12h 41m 17s.xml">
       <configuration name="timerdpTest.testEsperandoo" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="timerdpTest_testEsperandoo - 2019.01.21 at 17h 01m 24s.xml">
-      <configuration name="timerdpTest.testEsperandoo" configurationId="JUnit" />
+    <history-entry file="conc_test_in_Monitor-Conc - 2019.02.18 at 12h 41m 32s.xml">
+      <configuration name="conc.test in Monitor-Conc" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PoliticasTest - 2019.02.07 at 17h 00m 19s.xml">
-      <configuration name="PoliticasTest" configurationId="JUnit" />
+    <history-entry file="RdPTest - 2019.02.18 at 12h 41m 53s.xml">
+      <configuration name="RdPTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PoliticasTest - 2019.02.07 at 17h 38m 55s.xml">
-      <configuration name="PoliticasTest" configurationId="JUnit" />
+    <history-entry file="RdPTest_inhibidortrue - 2019.02.18 at 12h 42m 40s.xml">
+      <configuration name="RdPTest.inhibidortrue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PoliticasTest_Testprioridad - 2019.02.07 at 17h 40m 48s.xml">
-      <configuration name="PoliticasTest.Testprioridad" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PoliticasTest_Testprioridad - 2019.02.07 at 17h 41m 16s.xml">
-      <configuration name="PoliticasTest.Testprioridad" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PoliticasTest_Testprioridad - 2019.02.07 at 17h 42m 52s.xml">
-      <configuration name="PoliticasTest.Testprioridad" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PoliticasTest_Testmultiplesdisp - 2019.02.07 at 17h 46m 05s.xml">
-      <configuration name="PoliticasTest.Testmultiplesdisp" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PoliticasTest_Testcarga - 2019.02.07 at 18h 19m 18s.xml">
-      <configuration name="PoliticasTest.Testcarga" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PoliticasTest - 2019.02.07 at 18h 19m 31s.xml">
-      <configuration name="PoliticasTest" configurationId="JUnit" />
+    <history-entry file="RdPTest - 2019.02.18 at 12h 44m 19s.xml">
+      <configuration name="RdPTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -402,10 +423,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6497545" visible="true" weight="0.20877458" />
-      <window_info id="Structure" order="1" sideWeight="0.3502455" side_tool="true" visible="true" weight="0.20877458" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.62356794" visible="true" weight="0.2375189" />
+      <window_info id="Structure" order="1" sideWeight="0.3764321" side_tool="true" visible="true" weight="0.2375189" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -414,15 +434,16 @@
       <window_info anchor="bottom" id="Thumbnails" order="0" weight="0.3289689" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.7725041" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.6579378" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3289689" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3289689" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49924356" weight="0.3289689" />
+      <window_info anchor="bottom" id="Statistic" order="12" show_stripe_button="false" weight="0.49590835" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -437,6 +458,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implementacion de politica y unit tests de la clase" />
     <option name="LAST_COMMIT_MESSAGE" value="Implementacion de politica y unit tests de la clase" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/conc/Politicas.java</url>
+          <line>69</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/io/FileInputStream.java">
@@ -470,42 +503,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/conc/Rdp_test.java" />
-    <entry file="file://$PROJECT_DIR$/src/conc/Tarea2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/Colas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/Mutex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-          <folding>
-            <element signature="e#411#412#0" expanded="true" />
-            <element signature="e#477#478#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/conc/Entrada1.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/lang/Runnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/conc/runnables/Entrada1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -535,20 +533,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/test/timerdpTest.java">
+    <entry file="file://$PROJECT_DIR$/src/conc/Colas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1598">
-          <caret line="105" column="5" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
+        <state relative-caret-position="-366">
+          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/ThreadManager.java">
+    <entry file="file://$PROJECT_DIR$/src/conc/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="38" selection-start-line="38" selection-end-line="60" selection-end-column="9" />
+        <state relative-caret-position="17">
+          <caret line="19" column="65" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/conc/Mutex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+          <folding>
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/conc/test/PoliticasTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -557,52 +576,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/conc/Tarea1.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/conc/Tarea2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/conc/Politicas.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+          <caret line="156" column="60" selection-start-line="156" selection-start-column="57" selection-end-line="156" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/CreadorTareas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TODO">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/timerdp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="52" column="9" selection-start-line="30" selection-start-column="8" selection-end-line="52" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#4958#4959#0" expanded="true" />
+            <element signature="e#4987#4988#0" expanded="true" />
+            <element signature="e#5041#5042#0" expanded="true" />
+            <element signature="e#5079#5080#0" expanded="true" />
+            <element signature="e#5146#5147#0" expanded="true" />
+            <element signature="e#5186#5187#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/conc/GestorDeMonitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/main.java">
+    <entry file="file://$PROJECT_DIR$/src/conc/test/RdPTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="19" column="65" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+        <state relative-caret-position="2380">
+          <caret line="150" column="9" selection-start-line="150" selection-start-column="9" selection-end-line="150" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -611,49 +622,65 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/conc/RdP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#9097#9098#0" expanded="true" />
-            <element signature="e#9123#9124#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/test/RdPTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="128" column="76" lean-forward="true" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="76" />
+        <state relative-caret-position="461">
+          <caret line="55" column="117" selection-start-line="55" selection-start-column="117" selection-end-line="55" selection-end-column="117" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/Politicas.java">
+    <entry file="file://$PROJECT_DIR$/src/conc/timerdp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="137" column="9" lean-forward="true" selection-start-line="137" selection-start-column="9" selection-end-line="137" selection-end-column="9" />
+        <state relative-caret-position="357">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3453#3454#0" expanded="true" />
-            <element signature="e#3482#3483#0" expanded="true" />
-            <element signature="e#3536#3537#0" expanded="true" />
-            <element signature="e#3574#3575#0" expanded="true" />
-            <element signature="e#3641#3642#0" expanded="true" />
-            <element signature="e#3681#3682#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/test/PoliticasTest.java">
+    <entry file="file://$PROJECT_DIR$/src/conc/test/timerdpTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="85" column="1" lean-forward="true" selection-start-line="85" selection-start-column="1" selection-end-line="85" selection-end-column="1" />
+        <state relative-caret-position="187">
+          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/conc/ThreadManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-117">
+          <caret line="24" column="92" selection-start-line="24" selection-start-column="92" selection-end-line="24" selection-end-column="92" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/lang/Runnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/conc/CreadorTareas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="17" column="6" lean-forward="true" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
         </state>
       </provider>
     </entry>

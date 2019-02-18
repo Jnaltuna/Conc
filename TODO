@@ -1,15 +1,17 @@
 TODO:
 -Corregir red en PIPE
-    *Rampa, ver si hace falta modificar esa parte - TODO revisar si esta bien
+    *Rampa TODO revisar si esta bien
     *Estacion de cobro, ver si poner un recurso compartido
-    *Rehacer tabla de eventos y actividades
 
 -Definir cantidad de hilos. Crearlos TODO hacer tests de lo que hay
     *14 hilos ?
+    **ThreadManager -> utiliza un threadpoolexecutor para crear y ejecutar los hilos
+    **CreadorTareas -> clase que implementa runnable, creo los distintos hilos
 
--Implementar politicas
+-Consultar sobre politica
 
 -Agregar tiempo
+    *Consultas en word
 
 -Diagrama de clases
 

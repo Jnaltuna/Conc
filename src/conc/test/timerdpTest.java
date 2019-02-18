@@ -16,10 +16,11 @@ public class timerdpTest {
 
     private String dir = "C:\\Users\\Altuna\\Desktop\\timetest.txt";
     private timerdp time = null;
+    private ArrayList<Integer> sens = new ArrayList<>(Arrays.asList(0,0,1,1,0));
 
     @BeforeEach
     void iniciar(){
-        time = new timerdp(dir);
+        time = new timerdp(dir,sens);
     }
 
     @Test
@@ -97,7 +98,7 @@ public class timerdpTest {
         Boolean antes = time.getEsperando(0);
         time.setEsperando(0);
         Boolean despues = time.getEsperando(0);
-        time.resetEsperando();
+        time.resetEsperando(0);
         Boolean reset = time.getEsperando(0);
 
         assertEquals(false,antes);

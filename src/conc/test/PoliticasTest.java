@@ -44,6 +44,13 @@ class PoliticasTest {
     }
 
     @Test
+    void Testprioridadbaja(){
+        Integer esperado = 6;
+        disp = new ArrayList<>(Arrays.asList(0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0));
+        assertEquals(esperado,pol.Cualv2(disp));
+    }
+
+    @Test
     void Testmultiplesdisp(){
         Integer esperado1 = 18;
         Integer esperado2 = 7;

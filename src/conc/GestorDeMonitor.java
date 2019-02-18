@@ -100,13 +100,13 @@ public class GestorDeMonitor {
 
                     col.release(cual); //Libero el hilo que tengo que disparar para que entre al monitor nuevamente
 
-                    return; //Hilo actual sale del monitor. TODO ????
+                    return; //Hilo actual sale del monitor.
 
                 }
                 //Si m es cero no puedo disparar. Pongo k en false para salir del bucle
                 else {
 
-                    k=false; //TODO solo esto??
+                    k=false;
 
                 }
             }
