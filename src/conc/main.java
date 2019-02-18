@@ -1,10 +1,5 @@
 package conc;
 
-import conc.runnables.*;
-
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.Executors;
-
 import static java.lang.Thread.sleep;
 
 public class main {

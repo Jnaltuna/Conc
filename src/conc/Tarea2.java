@@ -1,7 +1,5 @@
 package conc;
 
-import java.util.concurrent.TimeUnit;
-
 /*
  * Clase de prueba. Ejecuto determinadas tareas
  * */

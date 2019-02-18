@@ -3,7 +3,6 @@ package conc;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -63,7 +62,8 @@ public class ThreadManager {
         return tareashilos;
     }
 
-    public void crearHilos(){
+    //public
+    void crearHilos(){
 
         for(ArrayList<Integer> tareas : tareashilos){
             threadlist.add(new CreadorTareas(mon,tareas,tiempoentredisp));

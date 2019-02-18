@@ -55,7 +55,8 @@ public class CreadorTareas implements Runnable {
     /*
     Al llamar a este metodo, modifico el atributo del objeto impidiendo que se disparen nuevas transiciones.
      */
-    public void finalizar(){
+    //public
+    void finalizar(){
         this.continuar=false;
     }
 }

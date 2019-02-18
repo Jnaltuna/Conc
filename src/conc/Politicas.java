@@ -8,7 +8,6 @@ import java.util.ArrayList;
 /*
  * Clase Politicas
  * Implementa la politica tomada para la ejecucion del programa
- * TODO Consultar
  * */
 
 public class Politicas {
@@ -39,7 +38,8 @@ public class Politicas {
 
     //Recibo el arreglo con los elementos que puedo disparar. Devuelvo el primero
     //TODO Borrar, implementar que la rdp use Cualv2
-    public Integer Cual(ArrayList<Integer> arr) {
+    //public
+    Integer Cual(ArrayList<Integer> arr) {
 
         for(int i=0;i<arr.size();i++) {
             if(arr.get(i)==1) {
@@ -111,7 +111,7 @@ public class Politicas {
     @param prioridad Lista con prioridades del grupo actual.
     @return valor maximo de prioridad del grupo.
      */
-    public Integer getMaxpriority(ArrayList<Integer> prioridad){
+    private Integer getMaxpriority(ArrayList<Integer> prioridad){
 
         int max = 0;
         for(Integer elem : prioridad){

@@ -18,7 +18,7 @@ public class GestorDeMonitor {
     private RdP red;
     private Colas col;
     private Politicas pol;
-    private int m; //TODO ver si es int o vector/arreglo
+    private int m;
     private Integer cantT = 4;
 
     /*

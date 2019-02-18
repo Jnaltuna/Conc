@@ -146,7 +146,8 @@ public class RdP {
         return sens;
     }
 
-    public ArrayList<Integer> calcsens(){
+    //public
+    ArrayList<Integer> calcsens(){
 
         ArrayList<Integer> E;// = new ArrayList<>();
         ArrayList<Integer> B;// = new ArrayList<>();
@@ -242,7 +243,7 @@ public class RdP {
         return  vectQ;
     }
 
-    public ArrayList<Integer> andvectores(ArrayList<Integer> a,ArrayList<Integer> b){ //TODO hacer test
+    private ArrayList<Integer> andvectores(ArrayList<Integer> a,ArrayList<Integer> b){ //TODO hacer test
 
         ArrayList<Integer> resultado = new ArrayList<>();
 
@@ -331,7 +332,8 @@ public class RdP {
     /*
      * Devuelve la cantidad de transiciones de la red de petri
      * */
-    public Integer getCantT() {
+    //public
+    Integer getCantT() {
         return cantT;
     }
 

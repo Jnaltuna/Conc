@@ -5,7 +5,8 @@ import java.util.concurrent.Semaphore;
 /*
  * Clase que implementa el Mutex utilizado en el Monitor
  * */
-public class Mutex {
+//public
+class Mutex {
 
     /*
      * Atributo:
@@ -17,14 +18,16 @@ public class Mutex {
      * Constructor:
      * Inicializa el semaforo con un elemento, ya que solo puede haber uno en el monitor
      * */
-    public Mutex() {
+    //public
+    Mutex() {
         semaphore = new Semaphore(1,true); //TODO fairness?
     }
 
     /*
      * Adquiere el semaforo
      * */
-    public void acquire() {
+    //public
+    void acquire() {
 
         try {
             semaphore.acquire();
@@ -39,7 +42,8 @@ public class Mutex {
      * Libera el semaforo
      * */
 
-    public void release() {
+    //public
+    void release() {
         semaphore.release();
     }
 

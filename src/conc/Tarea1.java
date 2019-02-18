@@ -1,7 +1,5 @@
 package conc;
 
-import java.util.concurrent.TimeUnit;
-
 import static java.lang.Thread.sleep;
 
 /*

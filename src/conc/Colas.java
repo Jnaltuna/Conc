@@ -6,18 +6,15 @@ import java.util.concurrent.Semaphore;
 /*
  * Clase Colas
  * Implementa las colas necesarias para el disparo de transiciones utilizando el monitor
- *
- * TODO Con semaforos?
- *
  * */
-public class Colas {
+/*public*/ class Colas {
 
     /*
      * Parametros
      * colas ->ArrayList de semaforos. Un semaforo por cada transicion
      * cantT ->Numero de transiciones de la red de petri. Necesario para establecer la cantidad de semaforos
      * */
-    private ArrayList<Semaphore> colas = new ArrayList<Semaphore>();
+    private ArrayList<Semaphore> colas = new ArrayList<>();
     private Integer cantT;
 
     /*
@@ -26,12 +23,13 @@ public class Colas {
      *
      * Crea tantos semaforos como transiciones tenga
      * */
-    public Colas(Integer cant) {
+    //public
+    Colas(Integer cant) {
 
         cantT=cant;
 
         for(int i=0 ; i<cant ; i++) {
-            colas.add(new Semaphore(0,true)); //TODO fairness?
+            colas.add(new Semaphore(0,true));
         }
 
     }
@@ -40,9 +38,9 @@ public class Colas {
      * @return Un ArrayList con un 1 en cada posicion que haya un hilo en esa cola. Un 0 si no hay hilos esperando.
      *
      * */
-    public ArrayList<Integer> quienesEstan() {
+    ArrayList<Integer> quienesEstan() {
 
-        ArrayList<Integer> res = new ArrayList<Integer>();
+        ArrayList<Integer> res = new ArrayList<>();
 
         for(int j=0;j<cantT;j++) {
             //Si el metodo devuelve true es porque hay hilos esperando, agrego un 1. De lo contrario agrego un cero
@@ -61,7 +59,8 @@ public class Colas {
      *
      * El hilo que se esta ejecutando libera al hilo indicado por el parametro
      */
-    public void release(Integer cual) {
+    //public
+    void release(Integer cual) {
 
         colas.get(cual).release();
 
@@ -72,7 +71,8 @@ public class Colas {
      *
      * El hilo que se esta ejecutando entra a la cola de la transicion que intento disparar
      * */
-    public void acquire(Integer cual) {
+    //public
+    void acquire(Integer cual) {
 
         try {
             colas.get(cual).acquire();
