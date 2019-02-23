@@ -13,7 +13,6 @@ import java.util.ArrayList;
 public class Politicas {
 
     private ArrayList<ArrayList<Integer>> grupos;
-    private ArrayList<Integer> prioridadgrupos;
     private ArrayList<ArrayList<Integer>> subprioridadgrupo;
     private Integer grupoactual;
 
@@ -24,30 +23,27 @@ public class Politicas {
     public Politicas(String dirpol) {
 
         grupos = new ArrayList<>();
-        prioridadgrupos = new ArrayList<>();
         subprioridadgrupo = new ArrayList<>();
         grupoactual = 0;
 
         cargarpoliticas(dirpol);
 
-        //System.out.println(grupos);
-        //System.out.println(prioridadgrupos);
-        //System.out.println(subprioridadgrupo);
+        System.out.println(grupos);
+        System.out.println(subprioridadgrupo);
 
     }
 
     //Recibo el arreglo con los elementos que puedo disparar. Devuelvo el primero
-    //TODO Borrar, implementar que la rdp use Cualv2
-    //public
+    //TODO Borrar?
     Integer Cual(ArrayList<Integer> arr) {
 
-        for(int i=0;i<arr.size();i++) {
-            if(arr.get(i)==1) {
+        for (int i = 0; i < arr.size(); i++) {
+            if (arr.get(i) == 1) {
                 return i;
             }
         }
 
-        return 0; //TODO ????
+        return 0;
     }
 
     /*
@@ -58,20 +54,19 @@ public class Politicas {
     con la maxima prioridad y disparo una de ellas de forma aleatoria.
      */
 
-    public Integer Cualv2(ArrayList<Integer> arr){
+    public Integer Cualv2(ArrayList<Integer> arr) {
 
         ArrayList<Integer> puedodisp = new ArrayList<>();
         boolean valorgrupo = true;
-        //boolean valorprioridad = true;
 
-        while(valorgrupo){
+        while (valorgrupo) {
 
             boolean valorprioridad = true;
             int max = getMaxpriority(subprioridadgrupo.get(grupoactual));
 
             puedodisp.clear();
 
-            while(valorprioridad) {
+            while (valorprioridad) {
                 for (int i = 0; i < grupos.get(grupoactual).size(); i++) {
 
                     if (subprioridadgrupo.get(grupoactual).get(i) == max) {
@@ -85,23 +80,25 @@ public class Politicas {
 
                 }
 
-                if(puedodisp.isEmpty() && max!=0){
+                if (puedodisp.isEmpty() && max != 0) {
                     max--;
-                }
-                else{
-                    valorprioridad=false;
+                } else {
+                    valorprioridad = false;
                 }
 
             }
 
             grupoactual++;
+            if (grupoactual == grupos.size()) { //TODO revisar!!
+                grupoactual = 0;
+            }
 
-            if(!puedodisp.isEmpty()){
+            if (!puedodisp.isEmpty()) {
                 valorgrupo = false;
             }
         }
 
-        int random = (int) (Math.random()*(puedodisp.size()- 1));
+        int random = (int) (Math.random() * (puedodisp.size() - 1));
 
         return puedodisp.get(random);
 
@@ -111,12 +108,11 @@ public class Politicas {
     @param prioridad Lista con prioridades del grupo actual.
     @return valor maximo de prioridad del grupo.
      */
-    private Integer getMaxpriority(ArrayList<Integer> prioridad){
+    private Integer getMaxpriority(ArrayList<Integer> prioridad) {
 
         int max = 0;
-        for(Integer elem : prioridad){
-            if(elem > max)
-            {
+        for (Integer elem : prioridad) {
+            if (elem > max) {
                 max = elem;
             }
         }
@@ -127,11 +123,10 @@ public class Politicas {
     /*
     @param dir Direccion en la cual encuentro el archivo con la politica.
     Abro el archivo, tomando los valores separados por un tab ('\t').
-    En cada linea tengo tres elementos distintos. Grupo, prioridad de grupo y subprioridad de grupo.
+    En cada linea tengo dos elementos distintos. Grupo y subprioridad de grupo.
     Los elementos son separados por el caracter ':', el cual uso para cambiar el arreglo en el cual almaceno los valores.
-    TODO ver que hacer con prioridad de grupo.
      */
-    private void cargarpoliticas(String dir){
+    private void cargarpoliticas(String dir) {
 
         try (BufferedReader br = new BufferedReader(new FileReader(dir))) {
 
@@ -147,27 +142,22 @@ public class Politicas {
                 subprioridadgrupo.add(new ArrayList<>());
                 int l = 0;
 
-                for(int j=0;j<valores.length;j++) {
+                for (int j = 0; j < valores.length; j++) {
 
-                    if(valores[j].equals(":")){
+                    if (valores[j].equals(":")) {
                         l++;
                         continue;
                     }
-                    if(l == 0){
+                    if (l == 0) {
                         grupos.get(i).add(Integer.parseInt(valores[j]));
-                    }
-                    else if(l == 1){
-                        prioridadgrupos.add(Integer.parseInt(valores[j]));
-                    }
-                    else if(l == 2){
+                    } else if (l == 1) {
                         subprioridadgrupo.get(i).add(Integer.parseInt(valores[j]));
                     }
 
                 }
                 i++;
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -176,9 +166,6 @@ public class Politicas {
         return grupos;
     }
 
-    public ArrayList<Integer> getPrioridadgrupos() {
-        return prioridadgrupos;
-    }
 
     public ArrayList<ArrayList<Integer>> getSubprioridadgrupo() {
         return subprioridadgrupo;
@@ -186,7 +173,7 @@ public class Politicas {
 
 }
 
-/* TODO Explicacion politica
+/*
    Tengo un arreglo con distintos grupos.
    En la primera ejecucion, disparo una transicion del primer grupo. Luego incremento el numero de grupo actual
    para ir recorriendo todos los grupos.

@@ -10,17 +10,21 @@ public class timerdp {
     private ArrayList<ArrayList<Integer>> tiempo;
     private ArrayList<Long> timestamps;
     private ArrayList<Boolean> esperando;
+    private ArrayList<Long> esperandoid;
     private ArrayList<Integer> oldsens;
+    private ArrayList<Long> sleepT;
 
     public timerdp(String dir,ArrayList<Integer> vectsens){
 
         tiempo = new ArrayList<>();
         timestamps = new ArrayList<>();
         esperando = new ArrayList<>();
+        esperandoid = new ArrayList<>();
+        sleepT = new ArrayList<>();
 
         tiempo = cargartiempo(dir);
 
-        for(int i =0;i<tiempo.size();i++){ //TODO agrego timestamp si esta sens, null de lo contrario
+        for(int i =0;i<tiempo.size();i++){
 
             if(vectsens.get(i) == 1){
                 timestamps.add(System.currentTimeMillis());
@@ -29,9 +33,12 @@ public class timerdp {
                 timestamps.add(0L);
             }
             esperando.add(false);
+            esperandoid.add(null);
+            sleepT.add(0L);
         }
 
         oldsens = vectsens;
+
     }
 
     private ArrayList<ArrayList<Integer>> cargartiempo(String dir){ //TODO cambiar ruta
@@ -106,6 +113,8 @@ public class timerdp {
                 setNuevoTimeStamp(i,false);
             }
         }
+        oldsens.clear();
+        oldsens.addAll(actsens);
     }
 
     public Boolean antesDeLaVentana(Integer disp){
@@ -121,18 +130,40 @@ public class timerdp {
 
     }
 
+    public void setSleepT(Integer disp){
+
+        Long valor;
+        if(valores(disp).get(0) == 0 && valores(disp).get(0) == 0){
+            valor = 0L;
+        }
+        else {
+            Long times = timestamps.get(disp) - System.currentTimeMillis();
+            valor = times + valores(disp).get(0)*1000;
+        }
+        sleepT.set(disp,valor);
+    }
+
+    public Long getSleepT(Integer disp){ //TODO ver si esta bien borrar cuando hago un get!!!
+        Long valor = sleepT.get(disp);
+        sleepT.set(disp,0L);
+        return valor;
+    }
+
     public void setEsperando(Integer disp){
         esperando.set(disp,true);
+        esperandoid.set(disp,Thread.currentThread().getId());//TODO ver y testear
     }
 
     public Boolean getEsperando(Integer disp){
         return esperando.get(disp);
     }
 
+    public Long getEsperandoID(Integer disp){return esperandoid.get(disp);}//TODO agregar que se use al preguntar por esperando para verificar que sea el hilo que lo llamo inicialmente
+
     public void resetEsperando(Integer disp){ //TODO reset de todos o solo el actual???
 
             esperando.set(disp,false);
-
+            esperandoid.set(disp,null);
     }
 
     public ArrayList<ArrayList<Integer>> getred(){

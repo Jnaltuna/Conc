@@ -16,7 +16,7 @@ public class timerdpTest {
 
     private String dir = "C:\\Users\\Altuna\\Desktop\\timetest.txt";
     private timerdp time = null;
-    private ArrayList<Integer> sens = new ArrayList<>(Arrays.asList(0,0,1,1,0));
+    private ArrayList<Integer> sens = new ArrayList<>(Arrays.asList(0,0,1,1,0,0,0,0));
 
     @BeforeEach
     void iniciar(){
@@ -32,6 +32,10 @@ public class timerdpTest {
         esperado.add(new ArrayList<>(Arrays.asList(1,5)));
         esperado.add(new ArrayList<>(Arrays.asList(3,8)));
         esperado.add(new ArrayList<>(Arrays.asList(0,0)));
+        esperado.add(new ArrayList<>(Arrays.asList(0,0)));
+        esperado.add(new ArrayList<>(Arrays.asList(0,0)));
+        esperado.add(new ArrayList<>(Arrays.asList(0,0)));
+
 
         assertEquals(esperado,time.getred());
 

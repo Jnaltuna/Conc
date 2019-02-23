@@ -22,10 +22,10 @@ public class CreadorTareas implements Runnable {
     @param time Tiempo entre disparos
      */
 
-    public CreadorTareas(GestorDeMonitor mon,ArrayList<Integer> disparos,Integer time){
+    public CreadorTareas(GestorDeMonitor mon, ArrayList<Integer> disparos, Integer time) {
 
-        this.mon=mon;
-        this.disparos=disparos;
+        this.mon = mon;
+        this.disparos = disparos;
         tiempoentredisp = time;
     }
 
@@ -34,11 +34,11 @@ public class CreadorTareas implements Runnable {
     Duerme entre disparos un cierto tiempo.
      */
 
-    public void run(){
+    public void run() {
 
-        while(continuar){
+        while (continuar) {
 
-            for(Integer valor : disparos){
+            for (Integer valor : disparos) {
 
                 mon.dispararTransicion(valor);
                 try {
@@ -46,17 +46,15 @@ public class CreadorTareas implements Runnable {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
             }
         }
-
     }
 
     /*
     Al llamar a este metodo, modifico el atributo del objeto impidiendo que se disparen nuevas transiciones.
      */
     //public
-    void finalizar(){
-        this.continuar=false;
+    void finalizar() {
+        this.continuar = false;
     }
 }

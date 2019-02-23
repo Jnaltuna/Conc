@@ -1,6 +1,10 @@
 package conc;
 
 import java.util.ArrayList;
+import java.sql.Timestamp;
+import java.util.concurrent.TimeUnit;
+
+import static java.lang.Thread.sleep;
 
 public class GestorDeMonitor {
 
@@ -19,13 +23,13 @@ public class GestorDeMonitor {
     private Colas col;
     private Politicas pol;
     private int m;
-    private Integer cantT = 4;
+    //private Integer cantT = 4;
 
     /*
      * Constructor:
      * Incializo Mutex, Rdp, Colas(le paso la cantidad de transiciones) y Politicas
      */
-    public GestorDeMonitor(String[] direccion,String dirpol) {
+    public GestorDeMonitor(String[] direccion, String dirpol) {
 
         mut = new Mutex();
         red = new RdP(direccion);
@@ -38,8 +42,6 @@ public class GestorDeMonitor {
      * @param disp Numero de transicion a disparar
      *
      * Metodo principal del Monitor.
-     *
-     * TODO Ver si se puede separar en varios metodos
      * */
     public void dispararTransicion(Integer disp) {
 
@@ -48,32 +50,35 @@ public class GestorDeMonitor {
         mut.acquire();
         k = true;
 
-        while(k) {
+        //TODO para test: System.out.println("El hilo " + Thread.currentThread().getId() + " ingresa al monitor, dispara " + disp+ " " + new Timestamp(System.currentTimeMillis()));
+
+        while (k) {
 
             //Intento disparar la transicion deseada.
             //Dependiendo del resultado hago una u otra cosa
+
             k = red.disparar(disp);
 
             //En el caso que haya disparado la transicion
-            if(k) { //antes - > k == true
+            if (k) {
+
+                //TODO para test:
+                System.out.println("Transicion " + disp + " exitosa " + new Timestamp(System.currentTimeMillis()));
 
                 ArrayList<Integer> VS;
-                ArrayList<Integer> VS1;//TODO solo testing
                 ArrayList<Integer> VC;
 
-                //VS = red.sensibilizadas(); //Obtengo ArrayList con las transiciones sensibilizadas
-                VS= red.calcsens();
-                //VS1 = red.calcsens();//TODO solo test
+                VS = red.calcsens();        //Obtengo ArrayList con las transiciones sensibilizadas
                 VC = col.quienesEstan();   //Obtengo ArrayList con los hilos que esperan para disparar una T
 
-                for(int f =0;f<red.getCantT();f++){ //TODO solo test
+                for (int f = 0; f < red.getCantT(); f++) { //TODO Test: Imprimo transiciones sensibilizadas
                     System.out.print(VS.get(f) + " ");
                 }
                 System.out.println();
 
                 //Inicializo m en 0 para llevar una cuenta
                 //Inicializo un ArrayList en el que guardo las transiciones que estan sens y hay hilo esperando
-                m=0;
+                m = 0;
                 ArrayList<Integer> arr = new ArrayList<>();
 
                 /*
@@ -82,21 +87,21 @@ public class GestorDeMonitor {
                  *Un cero si no esta sensibilizada o no hay hilo esperando
                  *Incremento m cuando hay un uno
                  */
-                for(int i=0;i<VS.size();i++) {
+                for (int i = 0; i < VS.size(); i++) {
 
-                    if(VS.get(i)!=0 && VC.get(i)!=0) {
+                    if (VS.get(i) != 0 && VC.get(i) != 0) {
                         m++;
                         arr.add(1);
-                    }
-                    else {
+                    } else {
                         arr.add(0);
                     }
                 }
 
                 //Si m es distinto de cero significa que puedo dispara una transicion
-                if(m != 0) {
+                if (m != 0) {
                     //La politica utiliza el arreglo que obtuve para decirme cual disparar
-                    int cual = pol.Cual(arr);
+                    //int cual = pol.Cual(arr);
+                    int cual = pol.Cualv2(arr); //TODO ver si anda bien
 
                     col.release(cual); //Libero el hilo que tengo que disparar para que entre al monitor nuevamente
 
@@ -106,15 +111,28 @@ public class GestorDeMonitor {
                 //Si m es cero no puedo disparar. Pongo k en false para salir del bucle
                 else {
 
-                    k=false;
+                    k = false;
 
                 }
-            }
-            //En el caso que no haya podido disparar la transicion libero el mutex y entro a una cola
-            else {
+            } else { //Entro en el caso que no se dispare la transicion
 
+                //Libero el mutex y obtengo el tiempo que deberia dormir el hilo
                 mut.release();
-                col.acquire(disp);
+                Long tiempo = red.getSleepT(disp);
+
+                if (tiempo == 0) {//En el caso que el tiempo sea 0, ess una transicion sin tiempo o no sens por lo que entra a la cola
+                    col.acquire(disp);
+                } else {
+                    //En el caso que sea distinto de 0, duermo ese tiempo y luego intento ingresar nuevamente al monitor
+                    //TODO para test :System.out.println("Duermo " + tiempo + " tiempo al disparar " + disp);
+                    try {
+                        sleep(tiempo);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    mut.acquire();
+                    k = true;
+                }
 
             }
         }

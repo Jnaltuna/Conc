@@ -26,10 +26,7 @@ public class RdP {
     private ArrayList<Integer> vectSens;
     private Integer cantp;// = 5;
     private Integer cantT;// = 4;
-
-    private timerdp redcontiempo;
-    //private String direccion = "C:\\Users\\Altuna\\Desktop\\rdp.txt";
-    //private String direccion2 = "C:\\Users\\Altuna\\Desktop\\marca.txt";
+    private timerdp redT;
 
     /*
      * Constructor.
@@ -43,17 +40,17 @@ public class RdP {
         rdp = new ArrayList<>();
         marca = new ArrayList<>();
 
-        this.rdp = cargarRDP(direccion[0]); //cargo la rdp y la marca inicial de un txt
+        //Cargo la rdp,marca y matriz de inhibicion desde txt.
+        this.rdp = cargarRDP(direccion[0]);
         this.marca = cargarM0(direccion[1]);
         this.inhibicion = cargarRDP(direccion[2]);
 
-
-        cantp=rdp.get(0).size();
-        cantT=rdp.size();
+        cantp = rdp.get(0).size();
+        cantT = rdp.size();
 
         this.vectSens = calcsens();
 
-        //redcontiempo = new timerdp("C:\\Users\\Altuna\\Desktop\\time.txt",vectSens); //TODO acomodar para unittests
+        redT = new timerdp(direccion[3], vectSens);
 
     }
 
@@ -61,53 +58,71 @@ public class RdP {
      * @param disp Numero de transicion que quiero disparar
      * @return true si se disparo correctamente, false de lo contrario
      *
-     * A la marca actual le sumo la columna correspondiente a la transicion que quiero disparar.
-     * Valor menor a cero provoca que falle el disparo.
+     * Verifico si la transicion esta sensibilizada, tomando en cuenta la marca y las ventanas de tiempo.
+     * En el caso de estar sensibilizada, sumo la columna de la matriz de incidencia con la marca actual.
+     * Ademas, actualizo el vector de transiciones sensibilizadas y los timestamps.
      * */
-   /* public Boolean disparar(Integer disp) { //TODO version vieja
+    public Boolean disparar(Integer disp) {
 
         ArrayList<Integer> res = new ArrayList<>();
 
-        for(int i=0;i<cantp;i++) {
-            if(inhibicion.get(disp).get(i) == 1){
-                if(marca.get(i) > 0){
-                    return false;
-                }
+        boolean k = estaSens(disp);
+        boolean exito;
+
+        if (k) {
+
+            for (int i = 0; i < cantp; i++) {
+                res.add(marca.get(i) + rdp.get(disp).get(i));
             }
-
-            res.add(marca.get(i)+rdp.get(disp).get(i));
-
-            if(res.get(i)<0) {
-                return false;
-            }
-        }
-
-        marca.clear();
-        marca.addAll(res);
-
-        return true;
-    }*/
-
-    public Boolean disparar(Integer disp){
-
-        ArrayList<Integer> res = new ArrayList<>();
-
-        if(vectSens.get(disp) == 1){
-
-            for(int i=0;i<cantp;i++){
-                res.add(marca.get(i)+rdp.get(disp).get(i));
-            }
-
             marca.clear();
             marca.addAll(res);
 
-            vectSens = calcsens();
+            redT.resetEsperando(disp);//TODO ver si esta bien aca
 
-            return true;
+            vectSens = calcsens();
+            redT.calctimestamps(vectSens);
+
+            exito = true;
+        } else {
+            exito = false;
         }
-        else{
-            return false;
+
+        return exito;
+
+    }
+
+    private Boolean estaSens(Integer disp) {
+
+        boolean k = false;
+
+        if (vectSens.get(disp) == 1) {
+
+            boolean ventana = redT.testVentanaTiempoo(disp);
+
+            if (ventana) {
+                //TODO revisar logica!!
+                if (!redT.getEsperando(disp) ||
+                        (redT.getEsperando(disp) && redT.getEsperandoID(disp) == Thread.currentThread().getId())) {
+                    redT.setNuevoTimeStamp(disp, false);
+                    k = true;
+                } else {//TODO ver si hace falta un else if
+                    k = false;
+                }
+            } else {
+                boolean antes = redT.antesDeLaVentana(disp);
+
+                if (antes) {
+                    redT.setEsperando(disp);
+                    redT.setSleepT(disp);
+                    k = false;
+                } else {
+                    k = false;
+                }
+            }
         }
+
+        return k;
+
     }
 
     /*
@@ -119,27 +134,27 @@ public class RdP {
 
         ArrayList<Integer> sens = new ArrayList<>();
 
-        for(int i=0;i<cantT;i++) { //Supongo inicialmente que estan todas sensibilizadas
+        for (int i = 0; i < cantT; i++) { //Supongo inicialmente que estan todas sensibilizadas
             sens.add(1);
         }
 
         //Para cada transicion, hago la suma de la marca con la columna correspondiente a esa transicion.
         //Si en alguna suma me da un resultado menor a 0, es porque esa transicion no estaba sensibilizada
         //Pongo el element j de sens en 0
-        for(int j=0;j<cantT;j++) {
+        for (int j = 0; j < cantT; j++) {
 
             ArrayList<Integer> tmp = new ArrayList<>();
 
-            for(int k=0;k<cantp;k++) {
+            for (int k = 0; k < cantp; k++) {
 
-                    tmp.add(marca.get(k) + rdp.get(j).get(k));
+                tmp.add(marca.get(k) + rdp.get(j).get(k));
 
-                    if (tmp.get(k) < 0) {
-                        sens.set(j, 0);
-                    }
-                    if(inhibicion.get(j).get(k) == 1 && marca.get(k) > 0){
-                        sens.set(j,0);
-                    }
+                if (tmp.get(k) < 0) {
+                    sens.set(j, 0);
+                }
+                if (inhibicion.get(j).get(k) == 1 && marca.get(k) > 0) {
+                    sens.set(j, 0);
+                }
             }
         }
 
@@ -147,39 +162,39 @@ public class RdP {
     }
 
     //public
-    ArrayList<Integer> calcsens(){
+    ArrayList<Integer> calcsens() {
 
         ArrayList<Integer> E;// = new ArrayList<>();
         ArrayList<Integer> B;// = new ArrayList<>();
         ArrayList<Integer> Ex;
 
-            //Calculo de E
+        //Calculo de E
         E = calcE();
-            //Calculo de B
+        //Calculo de B
         B = calcB();
-            //And entre E y B
-        Ex = andvectores(E,B);
+        //And entre E y B
+        Ex = andvectores(E, B);
 
         return Ex;
 
     }
 
-    public ArrayList<Integer> calcE(){ //TODO cambiar nombre
+    public ArrayList<Integer> calcE() { //TODO cambiar nombre
 
         ArrayList<Integer> vectE = new ArrayList<>();
 
-        for(int i=0;i<cantT;i++) { //Supongo inicialmente que estan todas sensibilizadas
+        for (int i = 0; i < cantT; i++) { //Supongo inicialmente que estan todas sensibilizadas
             vectE.add(1);
         }
 
         //Para cada transicion, hago la suma de la marca con la columna correspondiente a esa transicion.
         //Si en alguna suma me da un resultado menor a 0, es porque esa transicion no estaba sensibilizada
         //Pongo el element j de sens en 0
-        for(int j=0;j<cantT;j++) {
+        for (int j = 0; j < cantT; j++) {
 
             ArrayList<Integer> tmp = new ArrayList<>();
 
-            for(int k=0;k<cantp;k++) { // TODO hacer una funcion que calcule esto
+            for (int k = 0; k < cantp; k++) { // TODO hacer una funcion que calcule esto
 
                 tmp.add(marca.get(k) + rdp.get(j).get(k));
 
@@ -195,63 +210,60 @@ public class RdP {
     }
 
     //TODO comentar y hacer test
-    public ArrayList<Integer> calcB(){ //TODO cambiar nombre
+    public ArrayList<Integer> calcB() { //TODO cambiar nombre
 
         ArrayList<Integer> vectB = new ArrayList<>();
 
         ArrayList<Integer> vectQ = calcQ(); //obtengo vectorQ
 
-        for(int k=0;k<cantT;k++) {
+        for (int k = 0; k < cantT; k++) {
 
             ArrayList<Integer> tmp = new ArrayList<>();
 
             vectB.add(0);
 
-            for(int j=0;j<cantp;j++) { //
+            for (int j = 0; j < cantp; j++) { //
 
-                int valor = vectB.get(k)+vectQ.get(j)*inhibicion.get(k).get(j);
-                vectB.set(k,valor);
+                int valor = vectB.get(k) + vectQ.get(j) * inhibicion.get(k).get(j);
+                vectB.set(k, valor);
                 //inhibicion.get(j).get(k);
             }
         }
 
-        for(int n=0;n<cantT;n++){ //TODO ver bien si da valores binarios
-            if(vectB.get(n) == 0){//TODO
-                vectB.set(n,1);   //TODO
-            }
-            else{
-                vectB.set(n,0);
+        for (int n = 0; n < cantT; n++) { //TODO ver bien si da valores binarios
+            if (vectB.get(n) == 0) {//TODO
+                vectB.set(n, 1);   //TODO
+            } else {
+                vectB.set(n, 0);
             }
         }
 
         return vectB;
     }
 
-    public ArrayList<Integer> calcQ(){ //TODO HACER TEST
+    public ArrayList<Integer> calcQ() { //TODO HACER TEST
 
         ArrayList<Integer> vectQ = new ArrayList<>();
 
-        for(int i=0;i<cantp;i++){ //TODO revisar si esta bien Q
-            if(marca.get(i) !=0){
+        for (int i = 0; i < cantp; i++) { //TODO revisar si esta bien Q
+            if (marca.get(i) != 0) {
                 vectQ.add(1);
-            }
-            else{
+            } else {
                 vectQ.add(0);
             }
         }
 
-        return  vectQ;
+        return vectQ;
     }
 
-    private ArrayList<Integer> andvectores(ArrayList<Integer> a,ArrayList<Integer> b){ //TODO hacer test
+    private ArrayList<Integer> andvectores(ArrayList<Integer> a, ArrayList<Integer> b) { //TODO hacer test
 
         ArrayList<Integer> resultado = new ArrayList<>();
 
-        for(int i = 0;i<cantT;i++){
-            if(a.get(i) == 1 && b.get(i) == 1){
+        for (int i = 0; i < cantT; i++) {
+            if (a.get(i) == 1 && b.get(i) == 1) {
                 resultado.add(1);
-            }
-            else{
+            } else {
                 resultado.add(0);
             }
         }
@@ -270,24 +282,23 @@ public class RdP {
 
         try (BufferedReader br = new BufferedReader(new FileReader(direccion))) {
             String line;
-            boolean first=true;
+            boolean first = true;
             while ((line = br.readLine()) != null) {
 
                 String[] valores = line.split("\t");
 
-                if(first) {
-                    for(int i=0;i<valores.length;i++) {
+                if (first) {
+                    for (int i = 0; i < valores.length; i++) {
                         rdp.add(new ArrayList<>());
                     }
-                    first=false;
+                    first = false;
                 }
 
-                for(int j=0;j<valores.length;j++) {
+                for (int j = 0; j < valores.length; j++) {
                     rdp.get(j).add(Integer.parseInt(valores[j]));
                 }
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -309,12 +320,11 @@ public class RdP {
 
                 String[] valores = line.split("\t");
 
-                for(int j=0;j<valores.length;j++) {
+                for (int j = 0; j < valores.length; j++) {
                     marca.add(Integer.parseInt(valores[j]));
                 }
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -337,12 +347,16 @@ public class RdP {
         return cantT;
     }
 
-    public ArrayList<ArrayList<Integer>> getred(){
+    public ArrayList<ArrayList<Integer>> getred() {
         return rdp;
     }
 
-    public ArrayList<Integer> getmarca(){
+    public ArrayList<Integer> getmarca() {
         return marca;
+    }
+
+    public Long getSleepT(Integer disp) {
+        return redT.getSleepT(disp); //TODO ver!!!
     }
 
 }

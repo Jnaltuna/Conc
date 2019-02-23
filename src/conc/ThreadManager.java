@@ -21,7 +21,7 @@ public class ThreadManager {
     private ThreadPoolExecutor executor;
     private ArrayList<ArrayList<Integer>> tareashilos;
     private GestorDeMonitor mon;
-    private Integer tiempoentredisp = 100; //TODO ver si hace falta el tiempo entre disparos
+    private Integer tiempoentredisp = 1000; //TODO ver si hace falta el tiempo entre disparos
     private ArrayList<CreadorTareas> threadlist;
 
     public ThreadManager(GestorDeMonitor mon,String dirhilos){
@@ -85,13 +85,13 @@ public class ThreadManager {
     }
 
     public void terminarExecutor(){
-        executor.shutdownNow();
-        /*while(true){
+        //executor.shutdownNow();
+        while(true){
             if (executor.getCompletedTaskCount() == threadlist.size()) {
                 executor.shutdown();
                 break;
             }
-        }*/
+        }
     }
 
 }

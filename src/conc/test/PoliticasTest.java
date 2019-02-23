@@ -66,7 +66,6 @@ class PoliticasTest {
     void Testcarga(){
 
         ArrayList<ArrayList<Integer>> grupo = new ArrayList<>();
-        ArrayList<Integer> pgrupos = new ArrayList<>(Arrays.asList(1,1,1,1,1,2,1));
         ArrayList<ArrayList<Integer>> subpgrupos = new ArrayList<>();
 
         grupo.add(new ArrayList<>(Arrays.asList(18,3,19,4,20,5)));
@@ -86,7 +85,6 @@ class PoliticasTest {
         subpgrupos.add(new ArrayList<>(Arrays.asList(0,0,0)));
 
         assertEquals(grupo,pol.getGrupos());
-        assertEquals(pgrupos,pol.getPrioridadgrupos());
         assertEquals(subpgrupos,pol.getSubprioridadgrupo());
 
     }

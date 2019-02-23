@@ -15,8 +15,9 @@ class RdPTest {
     private String dir1 = "C:\\Users\\Altuna\\Desktop\\rdptest.txt";
     private String dir2 = "C:\\Users\\Altuna\\Desktop\\marcatest.txt";
     private String dir3 = "C:\\Users\\Altuna\\Desktop\\inhibiciontest.txt";
+    private String dir4 = "C:\\Users\\Altuna\\Desktop\\timetest.txt";
 
-    private String[] direccion = new String[] {dir1,dir2,dir3};
+    private String[] direccion = new String[] {dir1,dir2,dir3,dir4};
     private RdP red = null;
 
     @BeforeEach
@@ -28,11 +29,12 @@ class RdPTest {
     @Test
     void dispararred() {
 
-        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(0,0,1,0,1,0,0,3,0,0));
+        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(0,1,0,0,1,0,0,3,1,1));
 
         red.disparar(0);
         red.disparar(1);
-        red.disparar(3);
+        red.disparar(6);
+        red.disparar(7);
 
         assertEquals(esperado,red.getmarca());
 
@@ -45,7 +47,7 @@ class RdPTest {
 
         valor = red.disparar(0);
         valor1 = red.disparar(1);
-        valor2 = red.disparar(3);
+        valor2 = red.disparar(6);
 
         assertTrue(valor);
         assertTrue(valor1);
@@ -88,11 +90,11 @@ class RdPTest {
     @Test
     void sensibilizadascondisp(){
 
-        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(0,0,1,0,1,0,1,0));
+        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(0,0,1,1,0,0,1,1));
 
 
         red.disparar(0);
-        red.disparar(3);
+        red.disparar(7);
         red.disparar(1);
 
         assertEquals(esperado,red.sensibilizadas());
