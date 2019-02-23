@@ -8,7 +8,7 @@ import static java.lang.Thread.sleep;
 
 public class GestorDeMonitor {
 
-    /*
+    /**
      * Atributos de la clase:
      * k   ->variable auxiliar para determinar como continuo
      * mut ->Mutex para que solo entre uno al monitor
@@ -16,7 +16,7 @@ public class GestorDeMonitor {
      * col ->Colas del sistema
      * pol ->Politicas del sistema
      * m   ->Para det si puedo disparar alguna de las colas
-     * */
+     */
     private Boolean k;
     private Mutex mut;
     private RdP red;
@@ -25,7 +25,7 @@ public class GestorDeMonitor {
     private int m;
     //private Integer cantT = 4;
 
-    /*
+    /**
      * Constructor:
      * Incializo Mutex, Rdp, Colas(le paso la cantidad de transiciones) y Politicas
      */
@@ -38,11 +38,11 @@ public class GestorDeMonitor {
 
     }
 
-    /*
+    /**
      * @param disp Numero de transicion a disparar
-     *
-     * Metodo principal del Monitor.
-     * */
+     *             <p>
+     *             Metodo principal del Monitor.
+     */
     public void dispararTransicion(Integer disp) {
 
         //Adquiero el mutex para asegurarme que solo tenga un hilo al mismo tiempo.

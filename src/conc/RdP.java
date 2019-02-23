@@ -5,21 +5,19 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/*
+/**
  * Esta clase implementa la matriz de la red de petri
  * Permite que otras clases la utilizen
- *
  */
 
 
 public class RdP {
-    /*
+    /**
      * Atributos de la clase:
      * rdp                    -> matriz de incidencia
      * marca				  -> marca inicial/actual
      * cantp y cantT          -> cantidad de plazas y transiciones que tengo
-     *
-     * */
+     */
     private ArrayList<ArrayList<Integer>> rdp;
     private ArrayList<Integer> marca;
     private ArrayList<ArrayList<Integer>> inhibicion;
@@ -28,7 +26,7 @@ public class RdP {
     private Integer cantT;// = 4;
     private timerdp redT;
 
-    /*
+    /**
      * Constructor.
      * Inicializo rdp y marca.
      * Almaceno la rdp con ArrayList. Cada elemento de 'rdp' es una columna de la rdp.
@@ -45,6 +43,8 @@ public class RdP {
         this.marca = cargarM0(direccion[1]);
         this.inhibicion = cargarRDP(direccion[2]);
 
+        System.out.println(marca);
+
         cantp = rdp.get(0).size();
         cantT = rdp.size();
 
@@ -54,14 +54,14 @@ public class RdP {
 
     }
 
-    /*
+    /**
      * @param disp Numero de transicion que quiero disparar
      * @return true si se disparo correctamente, false de lo contrario
-     *
+     * <p>
      * Verifico si la transicion esta sensibilizada, tomando en cuenta la marca y las ventanas de tiempo.
      * En el caso de estar sensibilizada, sumo la columna de la matriz de incidencia con la marca actual.
      * Ademas, actualizo el vector de transiciones sensibilizadas y los timestamps.
-     * */
+     */
     public Boolean disparar(Integer disp) {
 
         ArrayList<Integer> res = new ArrayList<>();
@@ -91,6 +91,15 @@ public class RdP {
 
     }
 
+    /**
+     * @param disp Numero de transicion a disparar
+     * @return true si puedo disparar, false de lo contrario
+     * <p>
+     * En este metodo verifico si al momento de disparar la transicion la misma esta sensibilizada y tomo
+     * distintas acciones en base a si estoy dentro o fuera de la ventana de tiempo(en el caso de ser una trans con tiempo)
+     * Si estoy dentro de la ventana, debo ver si hay otro hilo esperando o no.
+     * Si estoy fuera de la ventana, debo verificar si estoy antes o despues.
+     */
     private Boolean estaSens(Integer disp) {
 
         boolean k = false;
@@ -100,12 +109,12 @@ public class RdP {
             boolean ventana = redT.testVentanaTiempoo(disp);
 
             if (ventana) {
-                //TODO revisar logica!!
+                //TODO revisar logica, ver si hace falta else if.
                 if (!redT.getEsperando(disp) ||
                         (redT.getEsperando(disp) && redT.getEsperandoID(disp) == Thread.currentThread().getId())) {
                     redT.setNuevoTimeStamp(disp, false);
                     k = true;
-                } else {//TODO ver si hace falta un else if
+                } else {
                     k = false;
                 }
             } else {
@@ -161,11 +170,16 @@ public class RdP {
         return sens;
     }
 
-    //public
-    ArrayList<Integer> calcsens() {
+    /**
+     * Implemento la multiplicacion de matrices para obtener las transiciones sensibilizadas, teniendo en cuenta
+     * la matriz de incidencia, la marca y la matriz de inhibicion
+     *
+     * @return Vector con las transiciones sensibilizadas
+     */
+    public ArrayList<Integer> calcsens() {
 
-        ArrayList<Integer> E;// = new ArrayList<>();
-        ArrayList<Integer> B;// = new ArrayList<>();
+        ArrayList<Integer> E;
+        ArrayList<Integer> B;
         ArrayList<Integer> Ex;
 
         //Calculo de E
@@ -179,7 +193,12 @@ public class RdP {
 
     }
 
-    public ArrayList<Integer> calcE() { //TODO cambiar nombre
+    /**
+     * Hago el calculo del vector de transiciones sensibilizadas segun la matriz de incidencia
+     *
+     * @return vector calculado
+     */
+    public ArrayList<Integer> calcE() {
 
         ArrayList<Integer> vectE = new ArrayList<>();
 
@@ -194,7 +213,7 @@ public class RdP {
 
             ArrayList<Integer> tmp = new ArrayList<>();
 
-            for (int k = 0; k < cantp; k++) { // TODO hacer una funcion que calcule esto
+            for (int k = 0; k < cantp; k++) {
 
                 tmp.add(marca.get(k) + rdp.get(j).get(k));
 
@@ -209,16 +228,18 @@ public class RdP {
 
     }
 
-    //TODO comentar y hacer test
-    public ArrayList<Integer> calcB() { //TODO cambiar nombre
+    /**
+     * Calculo del vector de transiciones des-sensibilizadas por arcos inhibidores
+     *
+     * @return vector calculado
+     */
+    public ArrayList<Integer> calcB() {
 
         ArrayList<Integer> vectB = new ArrayList<>();
 
         ArrayList<Integer> vectQ = calcQ(); //obtengo vectorQ
 
         for (int k = 0; k < cantT; k++) {
-
-            ArrayList<Integer> tmp = new ArrayList<>();
 
             vectB.add(0);
 
@@ -241,12 +262,17 @@ public class RdP {
         return vectB;
     }
 
-    public ArrayList<Integer> calcQ() { //TODO HACER TEST
+    /**
+     * Calculo del vector que contiene '1' si la plaza correspondiente es cero.
+     *
+     * @return vector calculado
+     */
+    public ArrayList<Integer> calcQ() {
 
         ArrayList<Integer> vectQ = new ArrayList<>();
 
-        for (int i = 0; i < cantp; i++) { //TODO revisar si esta bien Q
-            if (marca.get(i) != 0) {
+        for (int i = 0; i < cantp; i++) {
+            if (marca.get(i) != 0) { //TODO revisar logica, no deberia ser al reves?
                 vectQ.add(1);
             } else {
                 vectQ.add(0);
@@ -256,7 +282,12 @@ public class RdP {
         return vectQ;
     }
 
-    private ArrayList<Integer> andvectores(ArrayList<Integer> a, ArrayList<Integer> b) { //TODO hacer test
+    /**
+     * @param a Primer vector que utilizo para hacer AND
+     * @param b Segundo vector que utilizo para hacer AND
+     * @return AND logico entre ambos vectores recibidos
+     */
+    private ArrayList<Integer> andvectores(ArrayList<Integer> a, ArrayList<Integer> b) {
 
         ArrayList<Integer> resultado = new ArrayList<>();
 
@@ -271,11 +302,13 @@ public class RdP {
         return resultado;
     }
 
-    /*
+    /**
+     * @param direccion Direccion en la cual se encuentra el archivo con la red
+     * @return Red de Petri cargada en un doble ArrayList, en forma de matriz
      * Utiliza la direccion establecida previamente para abrir un archivo
      * En la primera iteracion crea tantos arraylist como columnas tenga
      * Luego va agregando los valores hasta llegar al final del archivo
-     * */
+     */
     private ArrayList<ArrayList<Integer>> cargarRDP(String direccion) {
 
         ArrayList<ArrayList<Integer>> rdp = new ArrayList<>();
@@ -306,10 +339,10 @@ public class RdP {
 
     }
 
-    /*
-     * Toma direccion2 establecida previamente
-     * Carga los valores en un arraylist
-     * */
+    /**
+     * @param direccion2 Direccion en la cual se encuentra el archivo con la marca
+     * @return ArrayList que contiene la marca del archivo
+     */
     private ArrayList<Integer> cargarM0(String direccion2) {
 
         ArrayList<Integer> marca = new ArrayList<>();
@@ -320,8 +353,8 @@ public class RdP {
 
                 String[] valores = line.split("\t");
 
-                for (int j = 0; j < valores.length; j++) {
-                    marca.add(Integer.parseInt(valores[j]));
+                for (String valore : valores) {
+                    marca.add(Integer.parseInt(valore));
                 }
             }
         } catch (IOException e) {
@@ -332,31 +365,40 @@ public class RdP {
 
     }
 
-    /*
-     *  Devuelve la cantidad de plazas de la red de petri
-     * */
+    /**
+     * @return Cantidad de plazas de la red de petri
+     */
     public Integer getCantp() {
         return cantp;
     }
 
-    /*
-     * Devuelve la cantidad de transiciones de la red de petri
-     * */
-    //public
+    /**
+     * @return Cantidad de transiciones de la red de petri
+     */
     Integer getCantT() {
         return cantT;
     }
 
+    /**
+     * @return Devuelve la red, para testing
+     */
     public ArrayList<ArrayList<Integer>> getred() {
         return rdp;
     }
 
+    /**
+     * @return Devuelve la marca, para testing
+     */
     public ArrayList<Integer> getmarca() {
         return marca;
     }
 
-    public Long getSleepT(Integer disp) {
-        return redT.getSleepT(disp); //TODO ver!!!
+    /**
+     * @param disp Numero de transicion
+     * @return Obtiene el tiempo que debe dormir el hilo de la clase timerdp
+     */
+    Long getSleepT(Integer disp) {
+        return redT.getSleepT(disp);
     }
 
 }

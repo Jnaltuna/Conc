@@ -5,10 +5,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/*
+/**
  * Clase Politicas
  * Implementa la politica tomada para la ejecucion del programa
- * */
+ */
 
 public class Politicas {
 
@@ -16,9 +16,10 @@ public class Politicas {
     private ArrayList<ArrayList<Integer>> subprioridadgrupo;
     private Integer grupoactual;
 
-    /*
-    Constructor de la clase.
-    @param dirpol direccion en la cual encuentro el txt con la politica adoptada
+    /**
+     * Constructor de la clase.
+     *
+     * @param dirpol direccion en la cual encuentro el txt con la politica adoptada
      */
     public Politicas(String dirpol) {
 
@@ -27,9 +28,6 @@ public class Politicas {
         grupoactual = 0;
 
         cargarpoliticas(dirpol);
-
-        System.out.println(grupos);
-        System.out.println(subprioridadgrupo);
 
     }
 
@@ -46,12 +44,12 @@ public class Politicas {
         return 0;
     }
 
-    /*
-    @param arr Arreglo con los elementos que puedo disparar
-    @return Entero correspondiente a la transicion que decido disparar
-    Utilizo los grupos que obtengo del txt y en cada llamado de la funcion ingreso a un grupo distinto
-    Dentro del grupo analizo la prioridad de todas las transiciones. Busco la o las transiciones disponibles
-    con la maxima prioridad y disparo una de ellas de forma aleatoria.
+    /**
+     * @param arr Arreglo con los elementos que puedo disparar
+     * @return Entero correspondiente a la transicion que decido disparar
+     * Utilizo los grupos que obtengo del txt y en cada llamado de la funcion ingreso a un grupo distinto
+     * Dentro del grupo analizo la prioridad de todas las transiciones. Busco la o las transiciones disponibles
+     * con la maxima prioridad y disparo una de ellas de forma aleatoria.
      */
 
     public Integer Cualv2(ArrayList<Integer> arr) {
@@ -104,9 +102,9 @@ public class Politicas {
 
     }
 
-    /*
-    @param prioridad Lista con prioridades del grupo actual.
-    @return valor maximo de prioridad del grupo.
+    /**
+     * @param prioridad Lista con prioridades del grupo actual.
+     * @return valor maximo de prioridad del grupo.
      */
     private Integer getMaxpriority(ArrayList<Integer> prioridad) {
 
@@ -120,11 +118,11 @@ public class Politicas {
         return max;
     }
 
-    /*
-    @param dir Direccion en la cual encuentro el archivo con la politica.
-    Abro el archivo, tomando los valores separados por un tab ('\t').
-    En cada linea tengo dos elementos distintos. Grupo y subprioridad de grupo.
-    Los elementos son separados por el caracter ':', el cual uso para cambiar el arreglo en el cual almaceno los valores.
+    /**
+     * @param dir Direccion en la cual encuentro el archivo con la politica.
+     *            Abro el archivo, tomando los valores separados por un tab ('\t').
+     *            En cada linea tengo dos elementos distintos. Grupo y subprioridad de grupo.
+     *            Los elementos son separados por el caracter ':', el cual uso para cambiar el arreglo en el cual almaceno los valores.
      */
     private void cargarpoliticas(String dir) {
 

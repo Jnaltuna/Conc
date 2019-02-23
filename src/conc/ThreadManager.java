@@ -8,14 +8,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
 
-/*
-* Esta clase crea los objetos runnable necesarios y los envia a un thread executor para que sean ejecutados.
-* Lee de un txt que tareas ejecuta cada hilo, lo crea y lo ejecuta.
-*
-* */
-
-
-
+/**
+ * Esta clase crea los objetos runnable necesarios y los envia a un thread executor para que sean ejecutados.
+ * Lee de un txt que tareas ejecuta cada hilo, lo crea y lo ejecuta.
+ */
 public class ThreadManager {
 
     private ThreadPoolExecutor executor;
@@ -24,7 +20,13 @@ public class ThreadManager {
     private Integer tiempoentredisp = 1000; //TODO ver si hace falta el tiempo entre disparos
     private ArrayList<CreadorTareas> threadlist;
 
-    public ThreadManager(GestorDeMonitor mon,String dirhilos){
+    /**
+     * Constructor
+     *
+     * @param mon      Monitor a utilizar
+     * @param dirhilos Direccion en la cual se encuentran todos los txt
+     */
+    public ThreadManager(GestorDeMonitor mon, String dirhilos) {
 
         this.mon = mon;
         tareashilos = cargarconfig(dirhilos);
@@ -33,7 +35,13 @@ public class ThreadManager {
 
     }
 
-    private ArrayList<ArrayList<Integer>> cargarconfig(String dirhilos){
+    /**
+     * Leo de un txt los numeros correspondientes a las transiciones que debe disparar cada hilo
+     *
+     * @param dirhilos Direccion en la cual encuentro la configuracion
+     * @return Doble arraylist con los valores cargados
+     */
+    private ArrayList<ArrayList<Integer>> cargarconfig(String dirhilos) {
 
         ArrayList<ArrayList<Integer>> tareashilos = new ArrayList<>();
 
@@ -49,44 +57,55 @@ public class ThreadManager {
 
                 tareashilos.add(new ArrayList<>());
 
-                for(int j=0;j<valores.length;j++) {
-                    tareashilos.get(i).add(Integer.parseInt(valores[j]));
+                for (String valore : valores) {
+                    tareashilos.get(i).add(Integer.parseInt(valore));
                 }
                 i++;
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
         return tareashilos;
     }
 
-    //public
-    void crearHilos(){
+    /**
+     * Creo los objetos runnable con la clase CreadorTareas, pasandole como parametro el monitor, las tareas que debe realizar y el tiempo entre disparos
+     * Los hilos creados los almaceno en un arraylist
+     */
+    void crearHilos() {
 
-        for(ArrayList<Integer> tareas : tareashilos){
-            threadlist.add(new CreadorTareas(mon,tareas,tiempoentredisp));
+        for (ArrayList<Integer> tareas : tareashilos) {
+            threadlist.add(new CreadorTareas(mon, tareas, tiempoentredisp));
         }
     }
 
-    public void iniciarHilos(){
+    /**
+     * Tomo los elementos del ArrayList con los objetos runnable y se los envio al executor para que cree los hilos y lo ejecute
+     */
+    void iniciarHilos() {
 
-        for(CreadorTareas hilo : threadlist){
+        for (CreadorTareas hilo : threadlist) {
             executor.execute(hilo);
         }
     }
 
-    public void finalizarHilos(){
+    /**
+     * Llama al metodo finalizar de cada hilo que se encuentra en el arraylist
+     */
+    public void finalizarHilos() {
 
-        for(CreadorTareas hilo :threadlist){
+        for (CreadorTareas hilo : threadlist) {
             hilo.finalizar();
         }
     }
 
-    public void terminarExecutor(){
+    /**
+     * Finalizo el executor en el caso que hayan terminado todas las tareas.
+     */
+    void terminarExecutor() {
         //executor.shutdownNow();
-        while(true){
+        while (true) {
             if (executor.getCompletedTaskCount() == threadlist.size()) {
                 executor.shutdown();
                 break;

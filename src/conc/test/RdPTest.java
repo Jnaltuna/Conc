@@ -17,11 +17,11 @@ class RdPTest {
     private String dir3 = "C:\\Users\\Altuna\\Desktop\\inhibiciontest.txt";
     private String dir4 = "C:\\Users\\Altuna\\Desktop\\timetest.txt";
 
-    private String[] direccion = new String[] {dir1,dir2,dir3,dir4};
+    private String[] direccion = new String[]{dir1, dir2, dir3, dir4};
     private RdP red = null;
 
     @BeforeEach
-    void iniciar(){
+    void iniciar() {
         red = new RdP(direccion);
     }
 
@@ -29,21 +29,21 @@ class RdPTest {
     @Test
     void dispararred() {
 
-        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(0,1,0,0,1,0,0,3,1,1));
+        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(0, 1, 0, 0, 1, 0, 0, 3, 1, 1));
 
         red.disparar(0);
         red.disparar(1);
         red.disparar(6);
         red.disparar(7);
 
-        assertEquals(esperado,red.getmarca());
+        assertEquals(esperado, red.getmarca());
 
     }
 
     @Test
     void disparartrue() {
 
-        boolean valor,valor1,valor2;
+        boolean valor, valor1, valor2;
 
         valor = red.disparar(0);
         valor1 = red.disparar(1);
@@ -57,18 +57,19 @@ class RdPTest {
     @Test
     void dispararredfail() {
 
-        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(1,0,0,1,0,0,0,3,0,0));
+        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(1, 0, 0, 1, 0, 0, 0, 3, 0, 0));
 
         red.disparar(3);
         red.disparar(2);
 
-        assertEquals(esperado,red.getmarca());
+        assertEquals(esperado, red.getmarca());
 
     }
-    @Test
-    void dispararfalse(){
 
-        boolean valor,valor1;
+    @Test
+    void dispararfalse() {
+
+        boolean valor, valor1;
 
         valor = red.disparar(3);
         valor1 = red.disparar(2);
@@ -81,98 +82,98 @@ class RdPTest {
     @Test
     void sensibilizadas() { //TODO revisar
 
-        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(1,0,0,0,0,0,0,1));
+        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(1, 0, 0, 0, 0, 0, 0, 1));
 
-        assertEquals(esperado,red.sensibilizadas());
+        assertEquals(esperado, red.calcsens());
 
     }
 
     @Test
-    void sensibilizadascondisp(){
+    void sensibilizadascondisp() {
 
-        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(0,0,1,1,0,0,1,1));
+        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(0, 0, 1, 1, 0, 0, 1, 1));
 
 
         red.disparar(0);
         red.disparar(7);
         red.disparar(1);
 
-        assertEquals(esperado,red.sensibilizadas());
+        assertEquals(esperado, red.calcsens());
 
     }
 
     @Test
-    void testcalcE(){
+    void testcalcE() {
 
-        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(1,0,0,0,0,0,1,1));
+        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(1, 0, 0, 0, 0, 0, 1, 1));
 
-        assertEquals(esperado,red.calcE());
+        assertEquals(esperado, red.calcE());
     }
 
     @Test
-    void testcalcB(){
+    void testcalcB() {
 
-        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(1,1,1,1,1,1,0,1));
+        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(1, 1, 1, 1, 1, 1, 0, 1));
 
-        assertEquals(esperado,red.calcB());
+        assertEquals(esperado, red.calcB());
     }
 
     @Test
-    void testcalcQ(){
+    void testcalcQ() {
 
-        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(1,0,0,1,0,0,0,1,0,0));
+        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(1, 0, 0, 1, 0, 0, 0, 1, 0, 0));
 
-        assertEquals(esperado,red.calcQ());
+        assertEquals(esperado, red.calcQ());
     }
 
     @Test
     void cargarRDP() {
         ArrayList<ArrayList<Integer>> esperado = new ArrayList<>();
-        esperado.add(new ArrayList<>(Arrays.asList(-1,1,0,0,0,0,1,-1,0,0)));
-        esperado.add(new ArrayList<>(Arrays.asList(0,0,0,-1,1,0,-1,1,0,0)));
-        esperado.add(new ArrayList<>(Arrays.asList(0,0,0,0,-1,1,0,0,0,0)));
-        esperado.add(new ArrayList<>(Arrays.asList(0,-1,1,0,0,0,0,0,0,0)));
-        esperado.add(new ArrayList<>(Arrays.asList(1,0,-1,0,0,0,0,0,0,0)));
-        esperado.add(new ArrayList<>(Arrays.asList(0,0,0,1,0,-1,0,0,0,0)));
-        esperado.add(new ArrayList<>(Arrays.asList(0,0,0,0,0,0,0,0,1,0)));
-        esperado.add(new ArrayList<>(Arrays.asList(0,0,0,0,0,0,0,0,0,1)));
+        esperado.add(new ArrayList<>(Arrays.asList(-1, 1, 0, 0, 0, 0, 1, -1, 0, 0)));
+        esperado.add(new ArrayList<>(Arrays.asList(0, 0, 0, -1, 1, 0, -1, 1, 0, 0)));
+        esperado.add(new ArrayList<>(Arrays.asList(0, 0, 0, 0, -1, 1, 0, 0, 0, 0)));
+        esperado.add(new ArrayList<>(Arrays.asList(0, -1, 1, 0, 0, 0, 0, 0, 0, 0)));
+        esperado.add(new ArrayList<>(Arrays.asList(1, 0, -1, 0, 0, 0, 0, 0, 0, 0)));
+        esperado.add(new ArrayList<>(Arrays.asList(0, 0, 0, 1, 0, -1, 0, 0, 0, 0)));
+        esperado.add(new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0, 0, 0, 0, 1, 0)));
+        esperado.add(new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0, 0, 0, 0, 0, 1)));
 
 
-        assertEquals(esperado,red.getred());
+        assertEquals(esperado, red.getred());
 
     }
 
     @Test
     void cargarM0() {
-        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(1,0,0,1,0,0,0,3,0,0));
+        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(1, 0, 0, 1, 0, 0, 0, 3, 0, 0));
 
-        assertEquals(esperado,red.getmarca());
+        assertEquals(esperado, red.getmarca());
     }
 
     @Test
-    void inhibidortrue(){
-        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(1,0,0,1,0,0,0,3,0,2));
+    void inhibidortrue() {
+        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(1, 0, 0, 1, 0, 0, 0, 3, 0, 2));
 
         red.disparar(7);
         red.disparar(7);
 
-        assertEquals(esperado,red.getmarca());
+        assertEquals(esperado, red.getmarca());
     }
 
     @Test
-    void inhibidorfalse(){
-        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(1,0,0,1,0,0,0,3,0,0));
+    void inhibidorfalse() {
+        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(1, 0, 0, 1, 0, 0, 0, 3, 0, 0));
 
         red.disparar(6);
         red.disparar(6);
 
-        assertEquals(esperado,red.getmarca());
+        assertEquals(esperado, red.getmarca());
 
     }
 
     @Test
-    void inhibidormult(){
-        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(1,0,0,1,0,0,0,3,0,3));
+    void inhibidormult() {
+        ArrayList<Integer> esperado = new ArrayList<>(Arrays.asList(1, 0, 0, 1, 0, 0, 0, 3, 0, 3));
 
         red.disparar(7);
         red.disparar(6);
@@ -180,7 +181,7 @@ class RdPTest {
         red.disparar(7);
         red.disparar(7);
 
-        assertEquals(esperado,red.getmarca());
+        assertEquals(esperado, red.getmarca());
     }
 
 }

@@ -6,12 +6,12 @@ public class Entrada1 implements Runnable {
 
     GestorDeMonitor mon;
 
-    public Entrada1(GestorDeMonitor mon){
+    public Entrada1(GestorDeMonitor mon) {
         this.mon = mon;
     }
 
     @Override
-    public void run(){
+    public void run() {
         mon.dispararTransicion(0);
         mon.dispararTransicion(18);
         mon.dispararTransicion(3);

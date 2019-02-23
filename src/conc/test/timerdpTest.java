@@ -16,52 +16,52 @@ public class timerdpTest {
 
     private String dir = "C:\\Users\\Altuna\\Desktop\\timetest.txt";
     private timerdp time = null;
-    private ArrayList<Integer> sens = new ArrayList<>(Arrays.asList(0,0,1,1,0,0,0,0));
+    private ArrayList<Integer> sens = new ArrayList<>(Arrays.asList(0, 0, 1, 1, 0, 0, 0, 0));
 
     @BeforeEach
-    void iniciar(){
-        time = new timerdp(dir,sens);
+    void iniciar() {
+        time = new timerdp(dir, sens);
     }
 
     @Test
-    void cargarvalores(){
+    void cargarvalores() {
 
         ArrayList<ArrayList<Integer>> esperado = new ArrayList<>();
-        esperado.add(new ArrayList<>(Arrays.asList(0,0)));
-        esperado.add(new ArrayList<>(Arrays.asList(0,0)));
-        esperado.add(new ArrayList<>(Arrays.asList(1,5)));
-        esperado.add(new ArrayList<>(Arrays.asList(3,8)));
-        esperado.add(new ArrayList<>(Arrays.asList(0,0)));
-        esperado.add(new ArrayList<>(Arrays.asList(0,0)));
-        esperado.add(new ArrayList<>(Arrays.asList(0,0)));
-        esperado.add(new ArrayList<>(Arrays.asList(0,0)));
+        esperado.add(new ArrayList<>(Arrays.asList(0, 0)));
+        esperado.add(new ArrayList<>(Arrays.asList(0, 0)));
+        esperado.add(new ArrayList<>(Arrays.asList(1, 5)));
+        esperado.add(new ArrayList<>(Arrays.asList(3, 8)));
+        esperado.add(new ArrayList<>(Arrays.asList(0, 0)));
+        esperado.add(new ArrayList<>(Arrays.asList(0, 0)));
+        esperado.add(new ArrayList<>(Arrays.asList(0, 0)));
+        esperado.add(new ArrayList<>(Arrays.asList(0, 0)));
 
 
-        assertEquals(esperado,time.getred());
+        assertEquals(esperado, time.getred());
 
     }
 
     @Test
-    void testvalores(){
+    void testvalores() {
 
         ArrayList<Integer> esperado = new ArrayList<>();
         esperado.add(3);
         esperado.add(8);
 
-        assertEquals(esperado,time.valores(3));
+        assertEquals(esperado, time.valores(3));
     }
 
     @Test
-    void testventanasinT(){
+    void testventanasinT() {
 
         Boolean val = time.testVentanaTiempoo(0);
 
-        assertEquals(true,val);
+        assertEquals(true, val);
 
     }
 
     @Test
-    void testventanaT(){
+    void testventanaT() {
 
         try {
             Thread.sleep(2000);
@@ -70,20 +70,20 @@ public class timerdpTest {
         }
         Boolean val = time.testVentanaTiempoo(2);
 
-        assertEquals(true,val);
+        assertEquals(true, val);
 
     }
 
     @Test
-    void antesTesttrue(){
+    void antesTesttrue() {
 
         Boolean val = time.antesDeLaVentana(2);
 
-        assertEquals(true,val);
+        assertEquals(true, val);
     }
 
     @Test
-    void antesTestfalse(){
+    void antesTestfalse() {
 
         try {
             Thread.sleep(2000);
@@ -93,11 +93,11 @@ public class timerdpTest {
 
         Boolean val = time.antesDeLaVentana(2);
 
-        assertEquals(false,val);
+        assertEquals(false, val);
     }
 
     @Test
-    void testEsperandoo(){
+    void testEsperandoo() {
 
         Boolean antes = time.getEsperando(0);
         time.setEsperando(0);
@@ -105,8 +105,8 @@ public class timerdpTest {
         time.resetEsperando(0);
         Boolean reset = time.getEsperando(0);
 
-        assertEquals(false,antes);
-        assertEquals(true,despues);
-        assertEquals(false,reset);
+        assertEquals(false, antes);
+        assertEquals(true, despues);
+        assertEquals(false, reset);
     }
 }
