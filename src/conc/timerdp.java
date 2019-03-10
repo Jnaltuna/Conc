@@ -246,4 +246,6 @@ public class timerdp {
     public ArrayList<ArrayList<Integer>> getred() {
         return tiempo;
     }
+
+    public ArrayList<Long> gettimestamps(){return timestamps;}
 }

@@ -2,7 +2,6 @@ package conc;
 
 import java.util.ArrayList;
 import java.sql.Timestamp;
-import java.util.concurrent.TimeUnit;
 
 import static java.lang.Thread.sleep;
 
@@ -23,7 +22,6 @@ public class GestorDeMonitor {
     private Colas col;
     private Politicas pol;
     private int m;
-    //private Integer cantT = 4;
 
     /**
      * Constructor:
@@ -140,6 +138,10 @@ public class GestorDeMonitor {
         //Hilo se va del monitor liberando el mutex
         mut.release();
 
+    }
+
+    Politicas getPol(){
+        return pol;
     }
 
 }

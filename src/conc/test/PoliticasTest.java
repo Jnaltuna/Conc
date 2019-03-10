@@ -89,4 +89,16 @@ class PoliticasTest {
         assertEquals(subpgrupos, pol.getSubprioridadgrupo());
 
     }
+
+    @Test
+    void TestchangeP(){
+
+        ArrayList<Integer> nuevaP = new ArrayList<>(Arrays.asList(1,1,1));
+        Integer numerogrupo = 1;
+
+        pol.changePolitica(numerogrupo,nuevaP);
+
+        assertEquals(nuevaP,pol.getSubprioridadgrupo().get(1));
+    }
+
 }

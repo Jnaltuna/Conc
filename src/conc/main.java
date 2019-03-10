@@ -1,5 +1,8 @@
 package conc;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import static java.lang.Thread.sleep;
 
 public class main {
@@ -22,7 +25,7 @@ public class main {
         ThreadManager manager = new ThreadManager(mot, dir4);
 
         manager.crearHilos();
-        manager.iniciarHilos(); //TODO iniciar los hilos
+        manager.iniciarHilos();
 
         try {
             sleep(10000);
@@ -35,6 +38,26 @@ public class main {
 
         System.exit(0);
 
+    }
+
+    public void setPllenado(GestorDeMonitor mot){
+        ArrayList<Integer> nuevaP = new ArrayList<>(Arrays.asList(2,1,1));
+        mot.getPol().changePolitica(1,nuevaP);
+    }
+
+    public void clearPllenado(GestorDeMonitor mot){
+        ArrayList<Integer> nuevaP = new ArrayList<>(Arrays.asList(0,0,0));
+        mot.getPol().changePolitica(1,nuevaP);
+    }
+
+    public void setPsalida(GestorDeMonitor mot){
+        ArrayList<Integer> nuevaP = new ArrayList<>(Arrays.asList(1,2,2,2));
+        mot.getPol().changePolitica(4,nuevaP);
+    }
+
+    public void clearPsalida(GestorDeMonitor mot){
+        ArrayList<Integer> nuevaP = new ArrayList<>(Arrays.asList(0,1,0,1));
+        mot.getPol().changePolitica(4,nuevaP);
     }
 
 }

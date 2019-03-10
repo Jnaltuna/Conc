@@ -17,7 +17,7 @@ public class ThreadManager {
     private ThreadPoolExecutor executor;
     private ArrayList<ArrayList<Integer>> tareashilos;
     private GestorDeMonitor mon;
-    private Integer tiempoentredisp = 1000; //TODO ver si hace falta el tiempo entre disparos
+    private Integer tiempoentredisp = 100; //TODO ver si hace falta el tiempo entre disparos
     private ArrayList<CreadorTareas> threadlist;
 
     /**

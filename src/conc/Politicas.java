@@ -57,48 +57,49 @@ public class Politicas {
         ArrayList<Integer> puedodisp = new ArrayList<>();
         boolean valorgrupo = true;
 
-        while (valorgrupo) {
+        while (valorgrupo) { //Itero hasta que el arreglo 'puedodisp' tenga algo.
 
             boolean valorprioridad = true;
-            int max = getMaxpriority(subprioridadgrupo.get(grupoactual));
+            int max = getMaxpriority(subprioridadgrupo.get(grupoactual));   //obtengo la maxima prioridad del grupo actual
 
             puedodisp.clear();
 
-            while (valorprioridad) {
-                for (int i = 0; i < grupos.get(grupoactual).size(); i++) {
+            while (valorprioridad) { //Itero hasta encontrar una prioridad valida dentro del grupo
+                for (int i = 0; i < grupos.get(grupoactual).size(); i++) { //recorro todos los elementos del grupo, buscando los que tengan la prioridad determinada en 'max'
 
                     if (subprioridadgrupo.get(grupoactual).get(i) == max) {
 
                         int elem = grupos.get(grupoactual).get(i);
 
-                        if (arr.get(elem) == 1) {
+                        if (arr.get(elem) == 1) {   //Analizo el elemento que encontre para ver si lo puedo disparar, segun el arreglo que recibo como parametro
                             puedodisp.add(elem);
                         }
                     }
 
                 }
 
-                if (puedodisp.isEmpty() && max != 0) {
-                    max--;
+                if (puedodisp.isEmpty() && max != 0) { //Si la prioridad actual no me da resultado y aun puedo
+                    max--;                             //seguir disminuyendo, le resto uno
                 } else {
                     valorprioridad = false;
                 }
 
             }
 
-            grupoactual++;
+            grupoactual++; //aumento el grupo para la siguiente iteracion o para el proximo hilo.
             if (grupoactual == grupos.size()) { //TODO revisar!!
                 grupoactual = 0;
             }
 
-            if (!puedodisp.isEmpty()) {
+            if (!puedodisp.isEmpty()) { //Cuando el arreglo tiene algo, pongo en false para salir del bucle
                 valorgrupo = false;
             }
         }
 
         int random = (int) (Math.random() * (puedodisp.size() - 1));
 
-        return puedodisp.get(random);
+        return puedodisp.get(random); //Disparo una transicion aleatoria dentro de las que puedo disparar
+
 
     }
 
@@ -158,6 +159,17 @@ public class Politicas {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public Boolean changePolitica(Integer numeroGrupo,ArrayList<Integer> nuevaP) {
+
+        if(nuevaP.size() != subprioridadgrupo.get(numeroGrupo).size()){
+            return false;
+        }
+        for(int i = 0; i<nuevaP.size();i++){
+            subprioridadgrupo.get(numeroGrupo).set(i,nuevaP.get(i));
+        }
+        return true;
     }
 
     public ArrayList<ArrayList<Integer>> getGrupos() {

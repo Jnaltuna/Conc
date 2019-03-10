@@ -25,6 +25,7 @@ public class RdP {
     private Integer cantp;// = 5;
     private Integer cantT;// = 4;
     private timerdp redT;
+    private log Log;
 
     /**
      * Constructor.
@@ -52,6 +53,8 @@ public class RdP {
 
         redT = new timerdp(direccion[3], vectSens);
 
+        Log = new log();
+
     }
 
     /**
@@ -76,6 +79,8 @@ public class RdP {
             }
             marca.clear();
             marca.addAll(res);
+
+            Log.escribir(Integer.toString(disp));
 
             redT.resetEsperando(disp);//TODO ver si esta bien aca
 
