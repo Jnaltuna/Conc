@@ -116,7 +116,7 @@ public class timerdp {
 
         long dif = System.currentTimeMillis() - timestamps.get(disp);
 
-        if (tiempo.get(disp).get(0) == 0 && tiempo.get(disp).get(1) == 0) { //TODO ver??
+        if (tiempo.get(disp).get(0) == 0 && tiempo.get(disp).get(1) == 0) {
             return true;
         }
         //Realizo el calculo para saber si estoy dentro del intervalo
@@ -174,7 +174,7 @@ public class timerdp {
 
     /**
      * En base al timestamp, el tiempo actual y el valor 'a' del intervalo [a,b], defino el tiempo que debe dormir el hilo.
-     * Tiempo en [ms] TODO ver si esta bien
+     * Tiempo en [ms]
      *
      * @param disp Numero de transicion que estoy analizando
      */
@@ -194,7 +194,7 @@ public class timerdp {
      * Devuelve el tiempo que debe dormir el hilo, eliminandolo de la lista simultaneamente.
      *
      * @param disp Numero de transicion que estoy analizando
-     * @return Tiempo en [ms] que debe dormir el hilo. TODO ver si esta bien
+     * @return Tiempo en [ms] que debe dormir el hilo.
      */
     Long getSleepT(Integer disp) {
         Long valor = sleepT.get(disp);
@@ -210,7 +210,7 @@ public class timerdp {
      */
     public void setEsperando(Integer disp) {
         esperando.set(disp, true);
-        esperandoid.set(disp, Thread.currentThread().getId());//TODO ver y testear
+        esperandoid.set(disp, Thread.currentThread().getId());
     }
 
     /**

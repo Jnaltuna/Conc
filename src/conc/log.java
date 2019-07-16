@@ -6,24 +6,23 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Timestamp;
 
-public class log {
+class log {
 
-    private String FILENAME = "C:\\Users\\Altuna\\Desktop\\log.txt";
-    private BufferedWriter bw;
-    private FileWriter fw;
+    private String filename;
 
-    public log(){
+    log(){
 
-        File f = new File(FILENAME);
+        filename = "C:\\Users\\Altuna\\Desktop\\log.txt";
+        File f = new File(filename);
         if(f.exists()){
             f.delete();
         }
 
     }
 
-    public void escribir(String valor){
+    void escribir(String valor){
 
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILENAME,true))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filename,true))) {
 
             valor = valor + "\t" + new Timestamp(System.currentTimeMillis()) + "\n";
 

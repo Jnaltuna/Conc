@@ -32,7 +32,6 @@ public class Politicas {
     }
 
     //Recibo el arreglo con los elementos que puedo disparar. Devuelvo el primero
-    //TODO Borrar?
     Integer Cual(ArrayList<Integer> arr) {
 
         for (int i = 0; i < arr.size(); i++) {
@@ -87,7 +86,7 @@ public class Politicas {
             }
 
             grupoactual++; //aumento el grupo para la siguiente iteracion o para el proximo hilo.
-            if (grupoactual == grupos.size()) { //TODO revisar!!
+            if (grupoactual == grupos.size()) {
                 grupoactual = 0;
             }
 
@@ -95,7 +94,9 @@ public class Politicas {
                 valorgrupo = false;
             }
         }
-
+        //Math.random() devuelve numero aleatorio entre 0.0 y 1.0
+        //Lo multiplico por la cantidad de elementos que tiene el arreglo puedodisp
+        //Al castear a int me va a devolver el indice de uno de los elementos
         int random = (int) (Math.random() * (puedodisp.size() - 1));
 
         return puedodisp.get(random); //Disparo una transicion aleatoria dentro de las que puedo disparar
@@ -141,16 +142,16 @@ public class Politicas {
                 subprioridadgrupo.add(new ArrayList<>());
                 int l = 0;
 
-                for (int j = 0; j < valores.length; j++) {
+                for (String valore : valores) {
 
-                    if (valores[j].equals(":")) {
+                    if (valore.equals(":")) {
                         l++;
                         continue;
                     }
                     if (l == 0) {
-                        grupos.get(i).add(Integer.parseInt(valores[j]));
+                        grupos.get(i).add(Integer.parseInt(valore));
                     } else if (l == 1) {
-                        subprioridadgrupo.get(i).add(Integer.parseInt(valores[j]));
+                        subprioridadgrupo.get(i).add(Integer.parseInt(valore));
                     }
 
                 }

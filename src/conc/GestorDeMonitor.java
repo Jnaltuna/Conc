@@ -9,7 +9,7 @@ public class GestorDeMonitor {
 
     /**
      * Atributos de la clase:
-     * k   ->variable auxiliar para determinar como continuo
+     * k   ->variable auxiliar para determinar como continuo.
      * mut ->Mutex para que solo entre uno al monitor
      * red ->Red de Petri
      * col ->Colas del sistema
@@ -27,7 +27,7 @@ public class GestorDeMonitor {
      * Constructor:
      * Incializo Mutex, Rdp, Colas(le paso la cantidad de transiciones) y Politicas
      */
-    public GestorDeMonitor(String[] direccion, String dirpol) {
+    GestorDeMonitor(String[] direccion, String dirpol) {
 
         mut = new Mutex();
         red = new RdP(direccion);
@@ -69,10 +69,10 @@ public class GestorDeMonitor {
                 VS = red.calcsens();        //Obtengo ArrayList con las transiciones sensibilizadas
                 VC = col.quienesEstan();   //Obtengo ArrayList con los hilos que esperan para disparar una T
 
-                for (int f = 0; f < red.getCantT(); f++) { //TODO Test: Imprimo transiciones sensibilizadas
-                    System.out.print(VS.get(f) + " ");
-                }
-                System.out.println();
+                //for (int f = 0; f < red.getCantT(); f++) { //TODO Test: Imprimo transiciones sensibilizadas
+                //    System.out.print(VS.get(f) + " ");
+                //}
+                //System.out.println();
 
                 //Inicializo m en 0 para llevar una cuenta
                 //Inicializo un ArrayList en el que guardo las transiciones que estan sens y hay hilo esperando
@@ -99,7 +99,7 @@ public class GestorDeMonitor {
                 if (m != 0) {
                     //La politica utiliza el arreglo que obtuve para decirme cual disparar
                     //int cual = pol.Cual(arr);
-                    int cual = pol.Cualv2(arr); //TODO ver si anda bien
+                    int cual = pol.Cualv2(arr);
 
                     col.release(cual); //Libero el hilo que tengo que disparar para que entre al monitor nuevamente
 

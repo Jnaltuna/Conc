@@ -26,6 +26,8 @@ public class RdP {
     private Integer cantT;// = 4;
     private timerdp redT;
     private log Log;
+    private verifplaza Verifplaza;
+    private int VERIFPLAZA = 1; //poner en 1 para verificar inv de plaza
 
     /**
      * Constructor.
@@ -55,6 +57,8 @@ public class RdP {
 
         Log = new log();
 
+        Verifplaza = new verifplaza();
+
     }
 
     /**
@@ -80,9 +84,23 @@ public class RdP {
             marca.clear();
             marca.addAll(res);
 
+            for (Integer integer : marca) { //TODO Test: Imprimo marca
+                System.out.print(integer + " ");
+            }
+            System.out.println();
+
+            //Verifico invariante de plaza
+            if(VERIFPLAZA == 1){
+                boolean var = Verifplaza.verificar(marca);
+                System.out.println("Verificacion inv plaza " + var);
+                if(!var){
+                    System.exit(0);
+                }
+            }
+
             Log.escribir(Integer.toString(disp));
 
-            redT.resetEsperando(disp);//TODO ver si esta bien aca
+            redT.resetEsperando(disp);
 
             vectSens = calcsens();
             redT.calctimestamps(vectSens);
@@ -114,7 +132,8 @@ public class RdP {
             boolean ventana = redT.testVentanaTiempoo(disp);
 
             if (ventana) {
-                //TODO revisar logica, ver si hace falta else if.
+                //Si ningun hilo lo seteo en esperando o si fue seteado en esperando y el hilo actual es el que
+                //lo seteo previamente
                 if (!redT.getEsperando(disp) ||
                         (redT.getEsperando(disp) && redT.getEsperandoID(disp) == Thread.currentThread().getId())) {
                     redT.setNuevoTimeStamp(disp, false);
@@ -248,7 +267,7 @@ public class RdP {
 
             vectB.add(0);
 
-            for (int j = 0; j < cantp; j++) { //
+            for (int j = 0; j < cantp; j++) {
 
                 int valor = vectB.get(k) + vectQ.get(j) * inhibicion.get(k).get(j);
                 vectB.set(k, valor);
@@ -256,9 +275,9 @@ public class RdP {
             }
         }
 
-        for (int n = 0; n < cantT; n++) { //TODO ver bien si da valores binarios
-            if (vectB.get(n) == 0) {//TODO
-                vectB.set(n, 1);   //TODO
+        for (int n = 0; n < cantT; n++) {
+            if (vectB.get(n) == 0) {
+                vectB.set(n, 1);
             } else {
                 vectB.set(n, 0);
             }
@@ -277,7 +296,7 @@ public class RdP {
         ArrayList<Integer> vectQ = new ArrayList<>();
 
         for (int i = 0; i < cantp; i++) {
-            if (marca.get(i) != 0) { //TODO revisar logica, no deberia ser al reves?
+            if (marca.get(i) != 0) {
                 vectQ.add(1);
             } else {
                 vectQ.add(0);
