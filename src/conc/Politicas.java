@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Clase Politicas
@@ -28,6 +29,8 @@ public class Politicas {
         grupoactual = 0;
 
         cargarpoliticas(dirpol);
+
+        System.out.println(grupos);
 
     }
 
@@ -97,10 +100,11 @@ public class Politicas {
         //Math.random() devuelve numero aleatorio entre 0.0 y 1.0
         //Lo multiplico por la cantidad de elementos que tiene el arreglo puedodisp
         //Al castear a int me va a devolver el indice de uno de los elementos
-        int random = (int) (Math.random() * (puedodisp.size() - 1));
+        //int random = (int) (Math.random() * (puedodisp.size() - 1));//TODO testing
+        Random rand = new Random();
+        int random = rand.nextInt( puedodisp.size());
 
         return puedodisp.get(random); //Disparo una transicion aleatoria dentro de las que puedo disparar
-
 
     }
 

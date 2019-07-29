@@ -11,9 +11,8 @@ public class verifplaza {
     private ArrayList<Integer> res;
 
 
-    public verifplaza(){
+    public verifplaza(String dir){
 
-        String dir = "C:\\Users\\Altuna\\Desktop\\invplaza.txt";
         cargarInv(dir);
 
     }

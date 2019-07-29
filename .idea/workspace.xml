@@ -2,28 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1703f21-f221-4136-9aab-3f306ec40e69" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/directories.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/directoriestest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/conc/Filemanager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/conc/test/verifplazaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/conc/verifplaza.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/conc/cantDisp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Monitor-Conc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Monitor-Conc.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO" beforeDir="false" afterPath="$PROJECT_DIR$/TODO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/META-INF/Monitor-Conc.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/CreadorTareas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/CreadorTareas.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/GestorDeMonitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/GestorDeMonitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/Politicas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/Politicas.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/RdP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/RdP.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/ThreadManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/ThreadManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/test/RdPTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/test/RdPTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/test/timerdpTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/test/timerdpTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/directories.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/directories.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/directoriestest.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/directoriestest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/CreadorTareas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/CreadorTareas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/conc/GestorDeMonitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/GestorDeMonitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/conc/Politicas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/Politicas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/conc/RdP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/RdP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conc/log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/ThreadManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/ThreadManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/conc/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conc/timerdp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/timerdp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/test/PoliticasTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/test/PoliticasTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/test/RdPTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/test/RdPTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/test/timerdpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/test/timerdpTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/test/verifplazaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/test/verifplazaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/verifplaza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/verifplaza.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/MonitorConc/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,76 +44,6 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/conc/main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/conc/Filemanager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/conc/GestorDeMonitor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/directories.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="49" lean-forward="true" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/directoriestest.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/conc/RdP.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -119,100 +52,11 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>oldsens</find>
-      <find>cantT</find>
-      <find>grupoactual</find>
-      <find>System.out</find>
-      <find>syste</find>
-    </findStrings>
-    <dirStrings>
-      <dir>C:\Users\Altuna\IdeaProjects\Monitor-Conc\src\conc</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/conc/Rdp_test.java" />
-        <option value="$PROJECT_DIR$/MonitorConc/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/TestRdP.java" />
-        <option value="$PROJECT_DIR$/monitorconc/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/RdPTest.java" />
-        <option value="$PROJECT_DIR$/src/conc/Entrada1.java" />
-        <option value="$PROJECT_DIR$/src/conc/runnables/Entrada3.java" />
-        <option value="$PROJECT_DIR$/src/conc/runnables/Entrada1.java" />
-        <option value="$PROJECT_DIR$/src/conc/runnables/Entrada2.java" />
-        <option value="$PROJECT_DIR$/src/conc/Tarea1.java" />
-        <option value="$PROJECT_DIR$/src/conc/Tarea2.java" />
-        <option value="$PROJECT_DIR$/src/conc/Colas.java" />
-        <option value="$PROJECT_DIR$/src/conc/CreadorTareas.java" />
-        <option value="$PROJECT_DIR$/src/conc/Mutex.java" />
-        <option value="$PROJECT_DIR$/src/conc/test/RdPTest.java" />
-        <option value="$PROJECT_DIR$/src/conc/test/timerdpTest.java" />
-        <option value="$PROJECT_DIR$/src/conc/ThreadManager.java" />
-        <option value="$PROJECT_DIR$/src/conc/log.java" />
-        <option value="$PROJECT_DIR$/src/conc/Politicas.java" />
-        <option value="$PROJECT_DIR$/src/conc/timerdp.java" />
-        <option value="$PROJECT_DIR$/src/conc/GestorDeMonitor.java" />
-        <option value="$PROJECT_DIR$/src/conc/test/PoliticasTest.java" />
-        <option value="$PROJECT_DIR$/src/conc/test/verifplazaTest.java" />
-        <option value="$PROJECT_DIR$/src/conc/verifplaza.java" />
-        <option value="$PROJECT_DIR$/src/conc/RdP.java" />
-        <option value="$PROJECT_DIR$/TODO" />
-        <option value="$PROJECT_DIR$/resources/directories.json" />
-        <option value="$PROJECT_DIR$/resources/directoriestest.json" />
-        <option value="$PROJECT_DIR$/src/conc/Filemanager.java" />
-        <option value="$PROJECT_DIR$/src/conc/main.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="43" />
-    <option name="y" value="-15" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
-  </component>
+  <component name="ProjectId" id="1Of1HrcpBSY2htXyKuGyHLPWU1D" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Monitor-Conc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Monitor-Conc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Monitor-Conc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Monitor-Conc" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Monitor-Conc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Monitor-Conc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Monitor-Conc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Monitor-Conc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="conc" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
@@ -268,11 +112,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="conc.test in Monitor-Conc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Monitor-Conc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="conc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="conc.test" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="timerdpTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Monitor-Conc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="conc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="conc.test" />
+      <option name="MAIN_CLASS_NAME" value="conc.test.timerdpTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="verifplazaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Monitor-Conc" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="conc.test.*" />
+          <option name="PATTERN" value="conc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -283,49 +156,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="verifplazaTest.testinit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="verifplazaTest.testverifF" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Monitor-Conc" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="conc.test.*" />
+          <option name="PATTERN" value="conc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="conc.test" />
       <option name="MAIN_CLASS_NAME" value="conc.test.verifplazaTest" />
-      <option name="METHOD_NAME" value="testinit" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="verifplazaTest.testverif" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Monitor-Conc" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="conc.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="conc.test" />
-      <option name="MAIN_CLASS_NAME" value="conc.test.verifplazaTest" />
-      <option name="METHOD_NAME" value="testverif" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="verifplazaTest.testverifT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Monitor-Conc" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="conc.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="conc.test" />
-      <option name="MAIN_CLASS_NAME" value="conc.test.verifplazaTest" />
-      <option name="METHOD_NAME" value="testverifT" />
+      <option name="METHOD_NAME" value="testverifF" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -334,10 +175,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.main" />
+        <item itemvalue="JUnit.conc.test in Monitor-Conc" />
         <item itemvalue="JUnit.verifplazaTest" />
-        <item itemvalue="JUnit.verifplazaTest.testverifT" />
-        <item itemvalue="JUnit.verifplazaTest.testverif" />
-        <item itemvalue="JUnit.verifplazaTest.testinit" />
+        <item itemvalue="JUnit.verifplazaTest.testverifF" />
+        <item itemvalue="JUnit.timerdpTest" />
       </list>
     </recent_temporary>
   </component>
@@ -397,40 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1552256154999</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Verificacion invariantes de plaza.&#10;Previo a implementar filemanager.">
+      <created>1563290896114</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1563290896114</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="verifplazaTest_testinit - 2019.07.10 at 11h 08m 48s.xml">
-      <configuration name="verifplazaTest.testinit" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="verifplazaTest_testinit - 2019.07.10 at 11h 15m 28s.xml">
-      <configuration name="verifplazaTest.testinit" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="verifplazaTest_testverif - 2019.07.10 at 12h 22m 24s.xml">
-      <configuration name="verifplazaTest.testverif" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="verifplazaTest_testverif - 2019.07.10 at 12h 22m 42s.xml">
-      <configuration name="verifplazaTest.testverif" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="verifplazaTest_testverif - 2019.07.10 at 12h 23m 43s.xml">
-      <configuration name="verifplazaTest.testverif" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="verifplazaTest_testverif - 2019.07.10 at 12h 24m 09s.xml">
-      <configuration name="verifplazaTest.testverif" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="verifplazaTest_testverif - 2019.07.10 at 12h 24m 40s.xml">
-      <configuration name="verifplazaTest.testverif" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="verifplazaTest_testverifT - 2019.07.10 at 12h 25m 19s.xml">
-      <configuration name="verifplazaTest.testverifT" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="verifplazaTest - 2019.07.10 at 12h 25m 47s.xml">
-      <configuration name="verifplazaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="verifplazaTest - 2019.07.10 at 12h 55m 49s.xml">
-      <configuration name="verifplazaTest" configurationId="JUnit" />
-    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -441,40 +257,18 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5155483" visible="true" weight="0.2246596" />
-      <window_info id="Structure" order="1" sideWeight="0.4844517" side_tool="true" weight="0.2987897" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Thumbnails" order="0" weight="0.3289689" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.32890365" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49924356" weight="0.4304419" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.3986711" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50075644" side_tool="true" weight="0.43698853" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="10" visible="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49848714" weight="0.32733223" />
-      <window_info anchor="bottom" id="Statistic" order="12" weight="0.4942717" />
-      <window_info anchor="bottom" id="Sequence" order="13" weight="0.7986907" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.32980332" />
-    </layout>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implementacion de politica y unit tests de la clase" />
@@ -483,263 +277,8 @@
     <MESSAGE value="Implementacion de logica con tiempo.&#10;Uso de politica con grupos en monitor.&#10;Correccion de errores.&#10;Limpieza de codigo" />
     <MESSAGE value="Comentarios de todos los metodos.&#10;Test de sistema con prod/cons realizado." />
     <MESSAGE value="Log de salida de transiciones disparadas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Log de salida de transiciones disparadas" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/io/FileInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2984">
-          <caret line="219" selection-start-line="219" selection-end-line="219" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/TestRdP.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.2.0/junit-jupiter-api-5.2.0.jar!/org/junit/jupiter/api/Test.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/RdPTest.java" />
-    <entry file="file://$PROJECT_DIR$/monitorconc/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/lang/NumberFormatException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/Rdp_test.java" />
-    <entry file="file://$PROJECT_DIR$/src/conc/Entrada1.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/lang/Runnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/Tarea2.java" />
-    <entry file="file://$PROJECT_DIR$/src/conc/Tarea1.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="146" column="6" lean-forward="true" selection-start-line="146" selection-start-column="6" selection-end-line="146" selection-end-column="6" />
-          <folding>
-            <element signature="e#6326#6327#0" expanded="true" />
-            <element signature="e#6394#6395#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/runnables/Entrada1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/runnables/Entrada2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/runnables/Entrada3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/Colas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-32">
-          <caret line="52" column="19" lean-forward="true" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/Mutex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding>
-            <element signature="e#396#397#0" expanded="true" />
-            <element signature="e#446#447#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/Politicas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="165" lean-forward="true" selection-start-line="165" selection-end-line="165" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/test/RdPTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="153" column="9" selection-start-line="153" selection-start-column="9" selection-end-line="153" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/test/timerdpTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/test/verifplazaTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="39" column="78" selection-start-line="39" selection-start-column="78" selection-end-line="39" selection-end-column="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/ThreadManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/timerdp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3553">
-          <caret line="212" column="62" selection-start-line="212" selection-start-column="62" selection-end-line="212" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/log.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/test/PoliticasTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/verifplaza.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/CreadorTareas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/directories.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Monitor-Conc.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TODO">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/RdP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/directoriestest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/Filemanager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/directories.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="49" lean-forward="true" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conc/GestorDeMonitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <MESSAGE value="Verificacion invariantes de plaza.&#10;Previo a implementar filemanager." />
+    <option name="LAST_COMMIT_MESSAGE" value="Verificacion invariantes de plaza.&#10;Previo a implementar filemanager." />
   </component>
   <component name="masterDetails">
     <states>

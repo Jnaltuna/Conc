@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class timerdpTest {
 
-    private String dir = "C:\\Users\\Altuna\\Desktop\\timetest.txt";
+    private String dir = "C:\\Users\\Altuna\\Desktop\\test\\timetest.txt";
     private timerdp time = null;
     private ArrayList<Integer> sens = new ArrayList<>(Arrays.asList(0, 0, 1, 1, 0, 0, 0, 0));
 

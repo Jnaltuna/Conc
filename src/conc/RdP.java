@@ -36,15 +36,15 @@ public class RdP {
      * Almaceno la marca inicial.
      * Obtengo la cantidad de plazas y transiciones.
      */
-    public RdP(String[] direccion) {
+    public RdP(Filemanager file) {
 
         rdp = new ArrayList<>();
         marca = new ArrayList<>();
 
         //Cargo la rdp,marca y matriz de inhibicion desde txt.
-        this.rdp = cargarRDP(direccion[0]);
-        this.marca = cargarM0(direccion[1]);
-        this.inhibicion = cargarRDP(direccion[2]);
+        this.rdp = cargarRDP(file.getvalor("rdp"));
+        this.marca = cargarM0(file.getvalor("marca"));
+        this.inhibicion = cargarRDP(file.getvalor("inhibicion"));
 
         System.out.println(marca);
 
@@ -53,11 +53,11 @@ public class RdP {
 
         this.vectSens = calcsens();
 
-        redT = new timerdp(direccion[3], vectSens);
+        redT = new timerdp(file.getvalor("time"), vectSens);
 
         Log = new log();
 
-        Verifplaza = new verifplaza();
+        Verifplaza = new verifplaza(file.getvalor("invp"));
 
     }
 
@@ -87,12 +87,12 @@ public class RdP {
             for (Integer integer : marca) { //TODO Test: Imprimo marca
                 System.out.print(integer + " ");
             }
-            System.out.println();
+            System.out.println(" - marca");
 
             //Verifico invariante de plaza
             if(VERIFPLAZA == 1){
                 boolean var = Verifplaza.verificar(marca);
-                System.out.println("Verificacion inv plaza " + var);
+                //System.out.println("Verificacion inv plaza " + var);
                 if(!var){
                     System.exit(0);
                 }

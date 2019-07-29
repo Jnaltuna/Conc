@@ -1,8 +1,9 @@
 {
-  "rdp" : "C:\\Users\\Altuna\\Desktop\\rdp.txt",
-  "marca" : "C:\\Users\\Altuna\\Desktop\\marca.txt",
-  "inhibicion" : "C:\\Users\\Altuna\\Desktop\\inhibicion.txt",
-  "hilos" : "C:\\Users\\Altuna\\Desktop\\hilos.txt",
-  "politica" :  "C:\\Users\\Altuna\\Desktop\\politica.txt",
-  "time" : "C:\\Users\\Altuna\\Desktop\\time.txt"
+  "rdp" : "C:\\Users\\Altuna\\Desktop\\est\\rdp.txt",
+  "marca" : "C:\\Users\\Altuna\\Desktop\\est\\marca.txt",
+  "inhibicion" : "C:\\Users\\Altuna\\Desktop\\est\\inhibicion.txt",
+  "hilos" : "C:\\Users\\Altuna\\Desktop\\est\\hilos.txt",
+  "politica" :  "C:\\Users\\Altuna\\Desktop\\est\\politica.txt",
+  "time" : "C:\\Users\\Altuna\\Desktop\\est\\time.txt",
+  "invp" : "C:\\Users\\Altuna\\Desktop\\est\\invplaza.txt"
 }

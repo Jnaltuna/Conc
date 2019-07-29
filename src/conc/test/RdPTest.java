@@ -1,5 +1,6 @@
 package conc.test;
 
+import conc.Filemanager;
 import conc.RdP;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,10 +20,11 @@ class RdPTest {
 
     private String[] direccion = new String[]{dir1, dir2, dir3, dir4};
     private RdP red = null;
+    private Filemanager file = new Filemanager(true);
 
     @BeforeEach
     void iniciar() {
-        red = new RdP(direccion);
+        red = new RdP(file);
     }
 
 

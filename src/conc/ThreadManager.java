@@ -17,7 +17,7 @@ public class ThreadManager {
     private ThreadPoolExecutor executor;
     private ArrayList<ArrayList<Integer>> tareashilos;
     private GestorDeMonitor mon;
-    private Integer tiempoentredisp = 100; //TODO ver si hace falta el tiempo entre disparos
+    private Integer tiempoentredisp = 10; //TODO ver si hace falta el tiempo entre disparos
     private ArrayList<CreadorTareas> threadlist;
 
     /**
@@ -74,9 +74,9 @@ public class ThreadManager {
      * Los hilos creados los almaceno en un arraylist
      */
     void crearHilos() {
-
+        cantDisp cant = new cantDisp();
         for (ArrayList<Integer> tareas : tareashilos) {
-            threadlist.add(new CreadorTareas(mon, tareas, tiempoentredisp));
+            threadlist.add(new CreadorTareas(mon, tareas, tiempoentredisp,cant));
         }
     }
 

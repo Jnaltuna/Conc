@@ -27,12 +27,12 @@ public class GestorDeMonitor {
      * Constructor:
      * Incializo Mutex, Rdp, Colas(le paso la cantidad de transiciones) y Politicas
      */
-    GestorDeMonitor(String[] direccion, String dirpol) {
+    GestorDeMonitor(Filemanager file) {
 
         mut = new Mutex();
-        red = new RdP(direccion);
+        red = new RdP(file);
         col = new Colas(red.getCantT());
-        pol = new Politicas(dirpol);
+        pol = new Politicas(file.getvalor("politica"));
 
     }
 

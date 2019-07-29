@@ -13,6 +13,7 @@ public class CreadorTareas implements Runnable {
     private ArrayList<Integer> disparos;
     private Boolean continuar = true;
     private Integer tiempoentredisp;
+    private cantDisp cant;
 
     /**
      * Constructor de la clase.
@@ -21,11 +22,12 @@ public class CreadorTareas implements Runnable {
      * @param disparos Lista con las transiciones que debe disparar el hilo
      * @param time     Tiempo entre disparos
      */
-    public CreadorTareas(GestorDeMonitor mon, ArrayList<Integer> disparos, Integer time) {
+    CreadorTareas(GestorDeMonitor mon, ArrayList<Integer> disparos, Integer time, cantDisp cant) {
 
         this.mon = mon;
         this.disparos = disparos;
         tiempoentredisp = time;
+        this.cant = cant;
     }
 
     /**
@@ -37,6 +39,8 @@ public class CreadorTareas implements Runnable {
         while (continuar) {
 
             for (Integer valor : disparos) {
+
+                cant.dism(); //TODO comentar para que no frene
 
                 mon.dispararTransicion(valor);
                 try {

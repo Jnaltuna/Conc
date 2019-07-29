@@ -15,7 +15,7 @@ class PoliticasTest {
 
     private Politicas pol = null;
     private ArrayList<Integer> disp;
-    private String dir = "C:\\Users\\Altuna\\Desktop\\politicatest.txt";
+    private String dir = "C:\\Users\\Altuna\\Desktop\\test\\politicatest.txt";
 
 
     @BeforeEach
