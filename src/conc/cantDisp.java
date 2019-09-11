@@ -2,7 +2,7 @@ package conc;
 
 public class cantDisp {
 
-    private int disparos = 2000;
+    private int disparos = 1500;
 
     public synchronized boolean dism(){
         disparos--;

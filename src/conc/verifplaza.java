@@ -18,7 +18,7 @@ public class verifplaza {
     }
 
     private void cargarInv(String direccion) {
-    //TODO ver si creo una clase con todos los metodos para leer de archivos
+
         invariantes = new ArrayList<>();
         res = new ArrayList<>();
         int i = 0;
@@ -83,7 +83,3 @@ public class verifplaza {
 
 
 }
-/*
-Ver si hay que cargar la matriz o las ecuaciones.
-Hacer metodo que tome una linea del array list y lo sume
- */

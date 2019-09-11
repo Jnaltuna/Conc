@@ -89,7 +89,7 @@ public class RdP {
             }
             System.out.println(" - marca");
 
-            //Verifico invariante de plaza
+            //TODO Verifico invariante de plaza
             if(VERIFPLAZA == 1){
                 boolean var = Verifplaza.verificar(marca);
                 //System.out.println("Verificacion inv plaza " + var);

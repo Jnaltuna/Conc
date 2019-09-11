@@ -2,29 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1703f21-f221-4136-9aab-3f306ec40e69" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/conc/cantDisp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/CreadorTareas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/CreadorTareas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/GestorDeMonitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/GestorDeMonitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/Politicas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/Politicas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/RdP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/RdP.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/ThreadManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/ThreadManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/test/RdPTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/test/RdPTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/test/timerdpTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/test/timerdpTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/directories.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/directories.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/directoriestest.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/directoriestest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conc/CreadorTareas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/CreadorTareas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conc/GestorDeMonitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/GestorDeMonitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conc/Politicas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/Politicas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/runnables/Entrada1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/runnables/Entrada2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/runnables/Entrada3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/timerdp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Monitor-Conc/conc/timerdp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/conc/RdP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/RdP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/conc/ThreadManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/ThreadManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conc/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conc/test/PoliticasTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/test/PoliticasTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conc/test/RdPTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/test/RdPTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conc/test/timerdpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/test/timerdpTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conc/test/verifplazaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/test/verifplazaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/cantDisp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/cantDisp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/runnables/Entrada1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/runnables/Entrada2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/runnables/Entrada3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conc/timerdp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/timerdp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/conc/verifplaza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conc/verifplaza.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -112,6 +103,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PoliticasTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Monitor-Conc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="conc.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="conc.test" />
+      <option name="MAIN_CLASS_NAME" value="conc.test.PoliticasTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RdPTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Monitor-Conc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="conc.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="conc.test" />
+      <option name="MAIN_CLASS_NAME" value="conc.test.RdPTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="conc.test in Monitor-Conc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Monitor-Conc" />
       <extension name="coverage">
@@ -130,7 +151,7 @@
       <module name="Monitor-Conc" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="conc.*" />
+          <option name="PATTERN" value="conc.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -141,44 +162,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="verifplazaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Monitor-Conc" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="conc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="conc.test" />
-      <option name="MAIN_CLASS_NAME" value="conc.test.verifplazaTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="verifplazaTest.testverifF" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Monitor-Conc" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="conc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="conc.test" />
-      <option name="MAIN_CLASS_NAME" value="conc.test.verifplazaTest" />
-      <option name="METHOD_NAME" value="testverifF" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.main" />
-        <item itemvalue="JUnit.conc.test in Monitor-Conc" />
-        <item itemvalue="JUnit.verifplazaTest" />
-        <item itemvalue="JUnit.verifplazaTest.testverifF" />
+        <item itemvalue="JUnit.PoliticasTest" />
         <item itemvalue="JUnit.timerdpTest" />
+        <item itemvalue="JUnit.RdPTest" />
+        <item itemvalue="JUnit.conc.test in Monitor-Conc" />
       </list>
     </recent_temporary>
   </component>
@@ -245,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1563290896114</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Filemanager funcionando.">
+      <created>1564439961489</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1564439961490</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -278,7 +275,8 @@
     <MESSAGE value="Comentarios de todos los metodos.&#10;Test de sistema con prod/cons realizado." />
     <MESSAGE value="Log de salida de transiciones disparadas" />
     <MESSAGE value="Verificacion invariantes de plaza.&#10;Previo a implementar filemanager." />
-    <option name="LAST_COMMIT_MESSAGE" value="Verificacion invariantes de plaza.&#10;Previo a implementar filemanager." />
+    <MESSAGE value="Filemanager funcionando." />
+    <option name="LAST_COMMIT_MESSAGE" value="Filemanager funcionando." />
   </component>
   <component name="masterDetails">
     <states>

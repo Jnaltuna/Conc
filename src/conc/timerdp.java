@@ -247,5 +247,7 @@ public class timerdp {
         return tiempo;
     }
 
-    public ArrayList<Long> gettimestamps(){return timestamps;}
+    public ArrayList<Long> gettimestamps() {
+        return timestamps;
+    }
 }
